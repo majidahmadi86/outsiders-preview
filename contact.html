@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr" data-i18n-page-title="title.contact">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Contact - Balzac Bangkok</title>
+<meta name="description" content="Contact Balzac Bangkok on Charoen Krung 43: visit, book events or sell books.">
+<link rel="preload" href="fonts/cormorant-garamond-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="page-contact">
+
+<div class="preview-ribbon" role="note">
+  <p data-i18n="ribbon.text">Maquette de site cr&eacute;&eacute;e pour le Balzac par Mikaro Studio. Ce n'est pas encore le site officiel.</p>
+  <button type="button" class="preview-ribbon-close" aria-label="Close this message" data-i18n-aria-label="ribbon.close">&times;</button>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand-chip logo-missing" aria-label="Balzac Bangkok">
+      <span class="brand-chip-text"><span class="name">BALZAC</span><span class="sub">LIBRAIRIE &middot; CAF&Eacute; &middot; GALERIE</span></span>
+    </a>
+    <div class="nav-drawer">
+      <button type="button" class="drawer-close" aria-label="Close menu" data-i18n-aria-label="drawer.close"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" data-i18n="nav.about">A Propos</a></li>
+          <li><a href="librairie.html" data-i18n="nav.librairie">Librairie</a></li>
+          <li><a href="cafe.html" data-i18n="nav.cafe">Caf&eacute;</a></li>
+          <li><a href="galerie.html" data-i18n="nav.galerie">Galerie</a></li>
+          <li><a href="events.html" data-i18n="nav.events">&Eacute;v&eacute;nements</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-toggle seg" role="group" aria-label="Language">
+          <button type="button" data-lang="fr">FR</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="th">&#x0E44;&#x0E17;&#x0E22;</button>
+        </div>
+        <a href="contact.html#visit" class="btn btn-cta-header"><span data-i18n="nav.cta">Nous rendre visite</span></a>
+      </div>
+    </div>
+    <div class="nav-scrim"></div>
+    <button type="button" class="hamburger" aria-label="Menu" data-i18n-aria-label="hamburger.label" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <section id="visit" class="reserve-section">
+    <div class="container">
+      <div class="card visit-form reserve-form" data-reveal>
+        <form novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="visit-name" data-i18n="form.name">Nom</label>
+              <input type="text" id="visit-name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="visit-phone" data-i18n="form.phone">T&eacute;l&eacute;phone ou WhatsApp</label>
+              <input type="text" id="visit-phone" name="phone" required>
+            </div>
+            <div class="form-field">
+              <label for="visit-reason" data-i18n="form.reason">Motif</label>
+              <select id="visit-reason" name="reason" required>
+                <option value="visit" data-i18n="form.reason.visit">Visite ou question</option>
+                <option value="sell" data-i18n="form.reason.sell">Vendre des livres</option>
+                <option value="cine" data-i18n="form.reason.cine">Cin&eacute;-club</option>
+                <option value="expo" data-i18n="form.reason.expo">Vernissage</option>
+                <option value="lecture" data-i18n="form.reason.lecture">Caf&eacute;-rencontre</option>
+                <option value="collab" data-i18n="form.reason.collab">Proposition d'exposition</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="visit-note" data-i18n="form.message">Message</label>
+              <textarea id="visit-note" name="message"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn" data-i18n="v.btn">Envoyer</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section band-white">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <h1 data-i18n="ct.h1">Nous trouver &agrave; Charoen Krung</h1>
+        <div class="brass-line"></div>
+      </div>
+      <div class="info-grid stagger">
+        <div class="card info-card" data-reveal>
+          <h3 data-i18n="c.card.address">Adresse</h3>
+          <p data-i18n="f.addr">Soi Charoen Krung 43, Bang Rak, Bangkok 10500</p>
+        </div>
+        <div class="card info-card" data-reveal>
+          <h3 data-i18n="c.card.phone">T&eacute;l&eacute;phone</h3>
+          <a href="tel:+66948937373">+66 94 893 7373</a>
+        </div>
+        <div class="card info-card" data-reveal>
+          <h3 data-i18n="c.card.whatsapp">WhatsApp</h3>
+          <a href="https://wa.me/66816964798" target="_blank" rel="noopener">+66 81 696 4798</a>
+        </div>
+        <div class="card info-card" data-reveal>
+          <h3 data-i18n="c.card.email">Email</h3>
+          <a href="mailto:balzacbangkok@gmail.com">balzacbangkok@gmail.com</a>
+        </div>
+        <div class="card info-card" data-reveal>
+          <h3 data-i18n="c.card.instagram">Instagram</h3>
+          <a href="https://instagram.com/balzacbangkok" target="_blank" rel="noopener">@balzacbangkok</a>
+        </div>
+      </div>
+
+      <div class="card map-card" data-reveal="scale">
+        <iframe src="https://maps.google.com/maps?q=Balzac%20Bangkok%20Charoen%20Krung%2043&output=embed" loading="lazy" title="Balzac Bangkok map"></iframe>
+      </div>
+
+      <div class="map-open" data-reveal>
+        <a href="https://maps.google.com/?q=Balzac+Bangkok+Charoen+Krung+43" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="map.open">Ouvrir dans Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo logo-missing" aria-label="Balzac Bangkok"><span class="footer-logo-text"><span class="name">BALZAC</span><span class="sub">LIBRAIRIE &middot; CAF&Eacute; &middot; GALERIE</span></span></a>
+        <p data-i18n="f.tag">Librairie, caf&eacute; et galerie francophones &agrave; Bangkok.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f.col.contact">Horaires &amp; contact</h4>
+        <a class="footer-line" href="tel:+66948937373">+66 94 893 7373</a>
+        <a class="footer-line" href="https://wa.me/66816964798" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-line" href="mailto:balzacbangkok@gmail.com">balzacbangkok@gmail.com</a>
+        <a class="footer-line" href="https://instagram.com/balzacbangkok" target="_blank" rel="noopener">Instagram @balzacbangkok</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f.col.find">Nous trouver</h4>
+        <p data-i18n="f.addr">Soi Charoen Krung 43, Bang Rak, Bangkok 10500</p>
+      </div>
+    </div>
+    <p class="footer-credit" data-i18n="f.credit">Maquette par Mikaro Studio &middot; mikaro.studio</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/66816964798" target="_blank" rel="noopener" class="float-reserve" aria-label="WhatsApp" data-i18n-aria-label="float.txt">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-4 3v-3H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"></path><path d="M9.5 10.5h.01M12 10.5h.01M14.5 10.5h.01"></path><path d="M12 14v-1"></path></svg>
+  <span data-i18n="float.txt">&Eacute;crivez-nous</span>
+</a>
+
+<div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+  <div class="modal-box">
+    <h2 id="modal-heading" class="visually-hidden">Contact preview</h2>
+    <p data-i18n="modal.text">Merci. Ceci est une maquette, rien n'a &eacute;t&eacute; envoy&eacute;. Sur le site final, votre message arrive directement sur le WhatsApp ou l'email de la librairie, sans interm&eacute;diaire.</p>
+    <button type="button" class="btn modal-close" data-i18n="modal.close">Fermer</button>
+  </div>
+</div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
