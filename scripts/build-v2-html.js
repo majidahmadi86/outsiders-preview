@@ -156,11 +156,11 @@ const index = `${head("title.home", "page-home", "Swiss-Thai legal counsel for i
         <li data-i18n="h.t3">Five working languages</li>
       </ul>
     </div>
-    <div class="hero-media" data-reveal="scale">
+    <div class="hero-media">
       <div class="hero-media-frame" data-curtain>
         <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback width="960" height="1080" loading="eager" fetchpriority="high" decoding="async">
       </div>
-      <div class="stat-card hero-stat" data-reveal="seam">
+      <div class="stat-card hero-stat hero-stat-enter">
         <span class="stat-num">01</span>
         <p data-i18n="h.stat">One firm from incorporation to operations</p>
       </div>
@@ -187,12 +187,12 @@ const index = `${head("title.home", "page-home", "Swiss-Thai legal counsel for i
   </section>
 
   ${ghostSection("03", "sec03.title", "Market entry checklist", `
-      <div class="lead-inner checklist-layout" data-reveal>
-        <div class="lead-copy">
+      <div class="lead-inner checklist-layout checklist-reveal" data-reveal>
+        <div class="lead-copy checklist-copy">
           <h2 data-i18n="lm.h">The Thailand Market Entry Checklist</h2>
           <p data-i18n="lm.p">Twelve questions to answer before you incorporate, from ownership limits to work permit quotas. Free, by email.</p>
         </div>
-        <form class="lead-form dark-form" novalidate>
+        <form class="lead-form dark-form checklist-form" novalidate>
           <label class="visually-hidden" for="lead-email">Email</label>
           <input type="email" id="lead-email" name="email" required placeholder="Email" data-i18n-placeholder="form.email">
           <button type="submit" class="btn btn-on-dark" data-i18n="lm.btn">Send me the checklist</button>
@@ -246,7 +246,7 @@ const marketEntry = `${head("title.market", "page-market", "Market entry roadmap
   </section>
   <section class="roadmap-vertical band-white">
     <div class="container">
-      <div class="stepper stepper-vertical roadmap-steps">${marketSteps}</div>
+      <div class="stepper stepper-vertical roadmap-steps" data-reveal>${marketSteps}</div>
     </div>
   </section>
   <section id="finder" class="finder-section band-ivory">
@@ -260,6 +260,7 @@ const marketEntry = `${head("title.market", "page-market", "Market entry roadmap
         <div class="finder-q"><p data-i18n="f.q3">Will you hire foreign staff?</p>
           <div class="finder-options">${[["yes","f.opt.hire"],["no","f.opt.nohire"]].map(([v,k])=>`<label class="finder-option"><input type="radio" name="q3" value="${v}"><span data-i18n="${k}">Option</span></label>`).join("")}</div></div>
         <div class="finder-result card" hidden>
+          <span class="finder-result-rule" aria-hidden="true"></span>
           <p class="finder-result-text"></p>
           <p class="muted-note" data-i18n="f.note">Indicative only, your exact route is confirmed in a consultation.</p>
           <a href="contact.html#consult" class="btn btn-on-dark finder-result-cta" data-i18n="nav.cta">Book a consultation</a>

@@ -345,6 +345,17 @@ section {
   height: 1px;
   background: var(--gold);
   flex-shrink: 0;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+body.page-home .hero-panel .eyebrow::before {
+  transform: scaleX(0);
+}
+
+body.page-home.hero-enter-active .hero-panel .eyebrow::before {
+  transform: scaleX(1);
+  transition: transform 0.6s ease;
 }
 
 .section-label {
@@ -531,20 +542,43 @@ html.js [data-reveal].is-visible { opacity: 1; transform: none; }
 .hero-cascade-item {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-fill-mode: none;
 }
 
-html.js .hero-cascade-item { animation: heroCascade 0s 2.5s forwards; }
-body.page-home .hero-cascade-item.hero-delay-1 { transition-delay: 0.08s; }
-body.page-home .hero-cascade-item.hero-delay-2 { transition-delay: 0.16s; }
-body.page-home .hero-cascade-item.hero-delay-3 { transition-delay: 0.24s; }
-body.page-home .hero-cascade-item.hero-delay-4 { transition-delay: 0.32s; }
-body.page-home .hero-cascade-item.hero-delay-5 { transition-delay: 0.4s; }
+body.page-home.hero-enter-active .hero-cascade-item.is-entered {
+  opacity: 1;
+  transform: none;
+}
 
-html.js body.page-home .hero-cascade-item { opacity: 1; transform: none; }
+body.page-home.hero-enter-done .hero-cascade-item {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .hero-cascade-item {
+  animation: heroCascade 0s 2.5s forwards;
+}
 
 @keyframes heroCascade {
   to { opacity: 1; transform: none; }
+}
+
+.hero-stat-enter {
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-fill-mode: none;
+}
+
+body.page-home.hero-enter-active .hero-stat-enter.is-entered,
+body.page-home.hero-enter-done .hero-stat-enter {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .hero-stat-enter {
+  animation: heroCascade 0s 2.5s forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -554,12 +588,41 @@ html.js body.page-home .hero-cascade-item { opacity: 1; transform: none; }
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  html.js [data-reveal], .hero-cascade-item, html.js [data-curtain], .frame-img {
+  html.js [data-reveal],
+  .hero-cascade-item,
+  .hero-stat-enter,
+  html.js [data-curtain],
+  .frame-img,
+  .section-ghost,
+  .stepper,
+  .roadmap-strip,
+  .checklist-reveal,
+  .checklist-copy,
+  .checklist-form,
+  .review-card,
+  .finder-result,
+  .why-card .card-icon {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;
     clip-path: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+  body.page-home .hero-panel .eyebrow::before {
+    transform: scaleX(1) !important;
+  }
+  .hero-media-frame::after,
+  .main-nav a.active::after,
+  .main-nav a[aria-current="page"]::after,
+  .gold-line,
+  .review-card::before,
+  .review-card::after,
+  .finder-result-rule {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
   }
   html { scroll-behavior: auto; }
 }
@@ -621,13 +684,31 @@ body.has-ribbon .site-header { top: var(--ribbon-h); }
 .brand-sub { font-size: 9px; letter-spacing: 0.2em; color: var(--stone); text-transform: uppercase; font-weight: 500; }
 .main-nav ul { display: flex; align-items: center; gap: clamp(16px, 2.5vw, 32px); }
 .main-nav a {
+  position: relative;
   font-size: 0.9rem; font-weight: 400; color: var(--stone);
   padding: 6px 0; border-bottom: 2px solid transparent;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  transition: color 0.25s ease;
 }
 .main-nav a:hover { color: var(--ink); }
 .main-nav a.active, .main-nav a[aria-current="page"] {
-  color: var(--ink); border-bottom-color: var(--gold); font-weight: 400;
+  color: var(--ink); border-bottom-color: transparent; font-weight: 400;
+}
+.main-nav a.active::after,
+.main-nav a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.main-nav a.active.nav-underline-ready::after,
+.main-nav a[aria-current="page"].nav-underline-ready::after {
+  transform: scaleX(1);
+  transition: transform 0.4s ease;
 }
 .header-actions { display: flex; align-items: center; gap: 14px; }
 .hamburger {
@@ -910,6 +991,13 @@ body.has-ribbon .hero {
   right: 0;
   height: 1px;
   background: var(--gold-line);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s var(--ease);
+}
+
+.stepper.is-visible::before {
+  transform: scaleX(1);
 }
 
 .stepper-step,
@@ -926,15 +1014,73 @@ body.has-ribbon .hero {
   position: absolute;
   top: 7px;
   left: 50%;
-  transform: translateX(-50%);
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: var(--ivory);
   border: 2px solid var(--gold);
   z-index: 1;
-  transition: background-color 0.25s ease, transform 0.25s ease;
+  transform: translateX(-50%) scale(0.6);
+  opacity: 0;
+  transition: background-color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
 }
+
+.stepper.is-visible .stepper-step::before,
+.stepper.is-visible .roadmap-step::before,
+.roadmap-strip.is-visible .stepper-step::before,
+.roadmap-strip.is-visible .roadmap-step::before {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+}
+
+.stepper.is-visible .stepper-step:nth-child(1)::before,
+.stepper.is-visible .roadmap-step:nth-child(1)::before,
+.roadmap-strip.is-visible .stepper-step:nth-child(1)::before,
+.roadmap-strip.is-visible .roadmap-step:nth-child(1)::before { transition-delay: 0.15s; }
+.stepper.is-visible .stepper-step:nth-child(2)::before,
+.stepper.is-visible .roadmap-step:nth-child(2)::before,
+.roadmap-strip.is-visible .stepper-step:nth-child(2)::before,
+.roadmap-strip.is-visible .roadmap-step:nth-child(2)::before { transition-delay: 0.23s; }
+.stepper.is-visible .stepper-step:nth-child(3)::before,
+.stepper.is-visible .roadmap-step:nth-child(3)::before,
+.roadmap-strip.is-visible .stepper-step:nth-child(3)::before,
+.roadmap-strip.is-visible .roadmap-step:nth-child(3)::before { transition-delay: 0.31s; }
+.stepper.is-visible .stepper-step:nth-child(4)::before,
+.stepper.is-visible .roadmap-step:nth-child(4)::before,
+.roadmap-strip.is-visible .stepper-step:nth-child(4)::before,
+.roadmap-strip.is-visible .roadmap-step:nth-child(4)::before { transition-delay: 0.39s; }
+.stepper.is-visible .stepper-step:nth-child(5)::before,
+.stepper.is-visible .roadmap-step:nth-child(5)::before,
+.roadmap-strip.is-visible .stepper-step:nth-child(5)::before,
+.roadmap-strip.is-visible .roadmap-step:nth-child(5)::before { transition-delay: 0.47s; }
+
+.stepper.is-visible .stepper-step p,
+.stepper.is-visible .roadmap-step p,
+.roadmap-strip.is-visible .stepper-step p,
+.roadmap-strip.is-visible .roadmap-step p {
+  opacity: 1;
+}
+
+.stepper.is-visible .stepper-step:nth-child(1) p,
+.stepper.is-visible .roadmap-step:nth-child(1) p,
+.roadmap-strip.is-visible .stepper-step:nth-child(1) p,
+.roadmap-strip.is-visible .roadmap-step:nth-child(1) p { transition-delay: 0.35s; }
+.stepper.is-visible .stepper-step:nth-child(2) p,
+.stepper.is-visible .roadmap-step:nth-child(2) p,
+.roadmap-strip.is-visible .stepper-step:nth-child(2) p,
+.roadmap-strip.is-visible .roadmap-step:nth-child(2) p { transition-delay: 0.43s; }
+.stepper.is-visible .stepper-step:nth-child(3) p,
+.stepper.is-visible .roadmap-step:nth-child(3) p,
+.roadmap-strip.is-visible .stepper-step:nth-child(3) p,
+.roadmap-strip.is-visible .roadmap-step:nth-child(3) p { transition-delay: 0.51s; }
+.stepper.is-visible .stepper-step:nth-child(4) p,
+.stepper.is-visible .roadmap-step:nth-child(4) p,
+.roadmap-strip.is-visible .stepper-step:nth-child(4) p,
+.roadmap-strip.is-visible .roadmap-step:nth-child(4) p { transition-delay: 0.59s; }
+.stepper.is-visible .stepper-step:nth-child(5) p,
+.stepper.is-visible .roadmap-step:nth-child(5) p,
+.roadmap-strip.is-visible .stepper-step:nth-child(5) p,
+.roadmap-strip.is-visible .roadmap-step:nth-child(5) p { transition-delay: 0.67s; }
 
 .stepper-step:hover::before,
 .roadmap-step:hover::before {
@@ -955,13 +1101,6 @@ body.has-ribbon .hero {
   letter-spacing: 0.1em;
   margin-bottom: 10px;
   font-variant-numeric: tabular-nums;
-}
-
-.stepper-step p,
-.roadmap-step p {
-  font-size: 0.92rem;
-  line-height: 1.45;
-  color: var(--stone);
 }
 
 .roadmap-strip {
@@ -1071,8 +1210,7 @@ html.js .roadmap-strip.is-visible::before {
   border-radius: 50%;
 }
 
-.why-card .card-icon svg,
-.service-card .card-icon svg {
+.why-card .card-icon svg {
   width: 44px;
   height: 44px;
   stroke: currentColor;
@@ -1080,6 +1218,29 @@ html.js .roadmap-strip.is-visible::before {
   stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.why-card.is-visible .card-icon svg path,
+.why-card.is-visible .card-icon svg circle {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: olIconDraw 0.9s ease forwards;
+}
+
+.why-card.is-visible .card-icon svg path {
+  animation-delay: 0.12s;
+}
+
+.why-card .card-icon {
+  transition: transform 0.4s ease;
+}
+
+.why-card:hover .card-icon {
+  transform: rotate(8deg);
+}
+
+@keyframes olIconDraw {
+  to { stroke-dashoffset: 0; }
 }
 
 .why-card h3,
@@ -1213,8 +1374,25 @@ html.js .roadmap-strip.is-visible::before {
 .review-card {
   position: relative;
   padding-left: 28px;
-  border-left: 3px solid var(--gold);
   background: var(--white);
+  overflow: hidden;
+}
+
+.review-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.8s ease;
+}
+
+.review-card.is-visible::after {
+  transform: scaleY(1);
 }
 
 .review-card::before {
@@ -1228,12 +1406,18 @@ html.js .roadmap-strip.is-visible::before {
   color: var(--gold);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  transform: scale(0.8);
+  transition: opacity 0.55s cubic-bezier(0.22, 1.15, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1.15, 0.36, 1);
 }
 
 .review-card.is-visible::before {
   opacity: 0.18;
+  transform: scale(1);
+}
+
+.review-card.is-visible .quote,
+.review-card.is-visible .author {
+  opacity: 1;
   transform: none;
 }
 
@@ -1244,12 +1428,18 @@ html.js .roadmap-strip.is-visible::before {
   margin-bottom: 18px;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s ease 0.12s, transform 0.55s ease 0.12s;
 }
 
 .review-card .author {
   color: var(--stone);
   font-size: 0.88rem;
   font-weight: 500;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
 }
 
 .review-sample-note {
@@ -1290,6 +1480,15 @@ html.js .roadmap-strip.is-visible::before {
   box-shadow: inset 0 0 0 1px var(--gold);
 }
 
+.finder-option.is-selecting {
+  animation: finderSweep 0.3s ease;
+}
+
+@keyframes finderSweep {
+  0% { box-shadow: inset 4px 0 0 0 var(--ink); }
+  100% { box-shadow: inset 0 0 0 1px var(--gold); }
+}
+
 .finder-option input {
   accent-color: var(--gold);
   width: 18px;
@@ -1308,6 +1507,35 @@ html.js .roadmap-strip.is-visible::before {
   color: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--gold-line);
   padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.finder-result-rule {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  margin-bottom: 18px;
+}
+
+.finder-result.is-showing {
+  animation: finderResultIn 0.55s ease forwards;
+}
+
+.finder-result.is-showing .finder-result-rule {
+  animation: finderRuleDraw 0.8s ease 0.1s forwards;
+}
+
+@keyframes finderResultIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes finderRuleDraw {
+  to { transform: scaleX(1); }
 }
 
 .finder-result[hidden] { display: none; }
@@ -1789,12 +2017,12 @@ html.js [data-curtain].curtain-safe > img {
 }
 
 @keyframes curtainClip {
-  0% { clip-path: inset(0 0 100% 0); }
+  0% { clip-path: inset(0 0 0 100%); }
   100% { clip-path: inset(0 0 0 0); }
 }
 
 @keyframes curtainScale {
-  0% { transform: scale(1.06); }
+  0% { transform: scale(1.03); }
   100% { transform: scale(1); }
 }
 
@@ -1948,6 +2176,14 @@ img[data-fallback].is-broken { display: none; }
   border-radius: var(--radius-inset);
   pointer-events: none;
   z-index: 2;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero-media-frame.frame-ready::after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .hero-media-frame img {
@@ -1989,11 +2225,13 @@ img[data-fallback].is-broken { display: none; }
 }
 
 html.js [data-reveal="seam"] {
-  transform: translateX(32px);
+  transform: translateX(-16px);
+  opacity: 0;
 }
 
 html.js [data-reveal="seam"].is-visible {
   transform: none;
+  opacity: 1;
 }
 
 .gold-line,
@@ -2002,7 +2240,7 @@ html.js [data-reveal="seam"].is-visible {
   height: 1px;
   background: var(--gold-line);
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.8s var(--ease);
 }
 
@@ -2027,6 +2265,37 @@ html.js [data-reveal="line"].is-visible {
 .checklist-layout .lead-copy p {
   color: var(--mist);
   margin: 0;
+}
+
+.checklist-copy {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.checklist-reveal.is-visible .checklist-copy {
+  opacity: 1;
+  transform: none;
+}
+
+.checklist-form {
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity 0.65s ease 0.12s, transform 0.65s ease 0.12s;
+}
+
+.checklist-reveal.is-visible .checklist-form {
+  opacity: 1;
+  transform: none;
+}
+
+.lead-form input.focus-cue {
+  animation: checklistFocusPulse 1.2s ease 1;
+}
+
+@keyframes checklistFocusPulse {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  40%, 60% { box-shadow: 0 0 0 2px var(--gold); }
 }
 
 .dark-form input {
@@ -2136,6 +2405,13 @@ html.js [data-reveal="line"].is-visible {
   right: auto;
   width: 1px;
   height: auto;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1s var(--ease);
+}
+
+.stepper-vertical.is-visible::before {
+  transform: scaleY(1);
 }
 
 .stepper-vertical .roadmap-block,
@@ -2149,8 +2425,26 @@ html.js [data-reveal="line"].is-visible {
 .stepper-vertical .stepper-step::before {
   top: 6px;
   left: -26px;
-  transform: none;
+  transform: scale(0.6);
+  opacity: 0;
 }
+
+.stepper-vertical.is-visible .roadmap-block::before,
+.stepper-vertical.is-visible .stepper-step::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.stepper-vertical.is-visible .roadmap-block:nth-child(1)::before,
+.stepper-vertical.is-visible .stepper-step:nth-child(1)::before { transition-delay: 0.15s; }
+.stepper-vertical.is-visible .roadmap-block:nth-child(2)::before,
+.stepper-vertical.is-visible .stepper-step:nth-child(2)::before { transition-delay: 0.23s; }
+.stepper-vertical.is-visible .roadmap-block:nth-child(3)::before,
+.stepper-vertical.is-visible .stepper-step:nth-child(3)::before { transition-delay: 0.31s; }
+.stepper-vertical.is-visible .roadmap-block:nth-child(4)::before,
+.stepper-vertical.is-visible .stepper-step:nth-child(4)::before { transition-delay: 0.39s; }
+.stepper-vertical.is-visible .roadmap-block:nth-child(5)::before,
+.stepper-vertical.is-visible .stepper-step:nth-child(5)::before { transition-delay: 0.47s; }
 
 .roadmap-block h2 {
   font-size: 1.35rem;
