@@ -1,287 +1,209 @@
 <!DOCTYPE html>
-<html lang="fr" data-i18n-page-title="title.home">
+<html lang="en" data-i18n-page-title="title.home">
 <head>
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<title>Balzac Bangkok</title>
-<meta name="description" content="Design preview for Balzac Bangkok, a French bookshop, café and gallery on Charoen Krung 43.">
-<link rel="preload" href="fonts/cormorant-garamond-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+<title>Outsiders Legal</title>
+<meta name="description" content="Swiss-Thai legal counsel for international companies entering Thailand.">
+<link rel="preload" href="fonts/libre-caslon-text-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/libre-caslon-text-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body class="page-home">
-
 <div class="preview-ribbon" role="note">
-  <p data-i18n="ribbon.text">Maquette de site créée pour le Balzac par Mikaro Studio. Ce n'est pas encore le site officiel.</p>
-  <button type="button" class="preview-ribbon-close" aria-label="Close this message" data-i18n-aria-label="ribbon.close">&times;</button>
+  <p data-i18n="ribbon.text">Live design preview prepared for Outsiders Legal by Mikaro Studio. Not the firm's official website yet.</p>
+  <button type="button" class="preview-ribbon-close" aria-label="Close" data-i18n-aria-label="ribbon.close">&times;</button>
 </div>
-
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="brand-chip" aria-label="Balzac Bangkok">
-      <img src="assets/img/logo.png" alt="" class="brand-chip-logo" data-i18n-alt="alt.logo" data-fallback width="140" height="44" decoding="async">
+    <a href="index.html" class="brand-link" aria-label="Outsiders Legal">
+      <img src="assets/img/logo.png" alt="" class="header-logo" data-i18n-alt="alt.logo" width="160" height="48" decoding="async">
     </a>
-
+    <span class="header-sep" aria-hidden="true"></span>
     <div class="nav-drawer">
-      <button type="button" class="drawer-close" aria-label="Close menu" data-i18n-aria-label="drawer.close">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-        </svg>
-      </button>
+      <button type="button" class="drawer-close" aria-label="Close menu" data-i18n-aria-label="drawer.close"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button>
       <nav class="main-nav" id="primary-nav" aria-label="Primary">
         <ul>
-          <li><a href="index.html" data-i18n="nav.about">A Propos</a></li>
-          <li><a href="librairie.html" data-i18n="nav.librairie">Librairie</a></li>
-          <li><a href="cafe.html" data-i18n="nav.cafe">Café</a></li>
-          <li><a href="galerie.html" data-i18n="nav.galerie">Galerie</a></li>
-          <li><a href="boutique.html" data-i18n="nav.boutique">Boutique</a></li>
-          <li><a href="events.html" data-i18n="nav.events">Événements</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="market-entry.html" data-i18n="nav.market">Market Entry</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="team.html" data-i18n="nav.team">Team</a></li>
           <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <div class="lang-toggle seg" role="group" aria-label="Language">
-          <button type="button" data-lang="fr">FR</button>
           <button type="button" data-lang="en">EN</button>
-          <button type="button" data-lang="th">ไทย</button>
+          <button type="button" data-lang="fr">FR</button>
+          <button type="button" data-lang="de">DE</button>
         </div>
-        <a href="contact.html#visit" class="btn btn-cta-header bounce-in">
-          <span data-i18n="nav.cta">Nous rendre visite</span>
-        </a>
+        <a href="contact.html#consult" class="btn btn-cta-header"><span data-i18n="nav.cta">Book a consultation</span></a>
       </div>
     </div>
-
     <div class="nav-scrim"></div>
-
-    <button type="button" class="hamburger" aria-label="Menu" data-i18n-aria-label="hamburger.label" aria-expanded="false" aria-controls="primary-nav">
-      <span></span><span></span><span></span>
-    </button>
+    <button type="button" class="hamburger" aria-label="Menu" data-i18n-aria-label="hamburger.label" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
   </div>
 </header>
-
 <main>
-
-  <section class="hero-v2">
-    <div class="container">
-      <div class="hero-v2-grid">
-        <div class="hero-v2-postcard-mobile polaroid polaroid--r1" data-reveal="scale" data-curtain>
-          <span class="par-avion-chip" data-i18n-skip>PAR AVION</span>
-          <span class="polaroid-photo">
-            <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback loading="eager" fetchpriority="high" decoding="async">
-          </span>
-          <span class="polaroid-caption" data-i18n="cap.facade">devant la boutique</span>
-          <svg class="ex-libris" viewBox="0 0 80 80" aria-hidden="true">
-            <circle class="ex-libris-ring" cx="40" cy="40" r="36"></circle>
-            <circle class="ex-libris-ring" cx="40" cy="40" r="28"></circle>
-            <text class="ex-libris-b" x="40" y="46" text-anchor="middle">B</text>
-            <text class="ex-libris-label" x="40" y="18" text-anchor="middle">BALZAC · BANGKOK</text>
-          </svg>
-        </div>
-
-        <div class="hero-v2-text" data-reveal>
-          <p class="eyebrow chapter-eyebrow hero-cascade-item hero-delay-1"><span class="chapter-prefix" data-i18n-skip>Chapitre I · </span><span data-i18n="h.eyebrow">LIBRAIRIE · CAFÉ · GALERIE</span></p>
-          <h1 class="hero-cascade-item hero-delay-2" data-i18n="h.h1">Des livres, du café, et un peu de Paris à Charoen Krung</h1>
-          <p class="hero-sub hero-cascade-item hero-delay-3" data-i18n="h.sub">Une famille d'écrivains suisses a posé ses malles dans le quartier des émeraudes et y a ouvert un salon : on y achète des romans, on y vend les siens, on y boit un chocolat en écoutant Brassens, et chaque mois un artiste accroche ses oeuvres aux murs.</p>
-          <div class="hero-ctas hero-cascade-item hero-delay-4">
-            <a href="events.html" class="btn" data-i18n="h.cta1">Voir les événements</a>
-            <a href="librairie.html" class="btn btn-ghost" data-i18n="h.cta2">Vendre ou chercher un livre</a>
-          </div>
-          <ul class="trust-bar hero-cascade-item hero-delay-5">
-            <li data-i18n="h.t1">À deux pas de l'ambassade de France</li>
-            <li data-i18n="h.t2">Achat et vente de livres</li>
-            <li data-i18n="h.t3">Expositions et ciné-club chaque mois</li>
-          </ul>
-        </div>
-
-        <div class="hero-v2-stack hero-v2-stack--desktop" data-reveal="scale">
-          <div class="hero-v2-offset">
-            <div class="hero-v2-peek polaroid polaroid--r-2" data-curtain>
-              <span class="polaroid-photo">
-                <img class="frame-img" src="assets/img/books1.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async">
-              </span>
-              <span class="polaroid-caption" data-i18n="cap.books">le mur des romans</span>
-            </div>
-            <div class="hero-v2-postcard polaroid polaroid--r1" data-curtain>
-              <span class="par-avion-chip" data-i18n-skip>PAR AVION</span>
-              <span class="polaroid-photo">
-                <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback loading="eager" fetchpriority="high" decoding="async">
-              </span>
-              <span class="polaroid-caption" data-i18n="cap.facade">devant la boutique</span>
-              <svg class="ex-libris" viewBox="0 0 80 80" aria-hidden="true">
-                <circle class="ex-libris-ring" cx="40" cy="40" r="36"></circle>
-                <circle class="ex-libris-ring" cx="40" cy="40" r="28"></circle>
-                <text class="ex-libris-b" x="40" y="46" text-anchor="middle">B</text>
-                <text class="ex-libris-label" x="40" y="18" text-anchor="middle">BALZAC · BANGKOK</text>
-              </svg>
-            </div>
-          </div>
-        </div>
+  <section class="hero-split">
+    <div class="hero-panel">
+      <p class="eyebrow hero-cascade-item hero-delay-1" data-i18n-skip>SWISS-THAI LEGAL COUNSEL · BANGKOK</p>
+      <h1 class="hero-cascade-item hero-delay-2" data-i18n="h.h1">Enter Thailand with certainty</h1>
+      <p class="hero-sub hero-cascade-item hero-delay-3" data-i18n="h.sub">Outsiders Legal guides international companies into the Thai market.</p>
+      <div class="hero-ctas hero-cascade-item hero-delay-4">
+        <a href="contact.html#consult" class="btn" data-i18n="h.cta1">Book a consultation</a>
+        <a href="market-entry.html" class="btn btn-ghost" data-i18n="h.cta2">See the market entry roadmap</a>
+      </div>
+      <ul class="trust-bar hero-cascade-item hero-delay-5">
+        <li data-i18n="h.t1">Led by a Chulalongkorn-trained Thai attorney</li>
+        <li data-i18n="h.t2">Swiss business adviser on the team</li>
+        <li data-i18n="h.t3">Five working languages</li>
+      </ul>
+    </div>
+    <div class="hero-media" data-reveal="scale">
+      <div class="hero-media-frame" data-curtain>
+        <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback width="960" height="1080" loading="eager" fetchpriority="high" decoding="async">
+      </div>
+      <div class="stat-card hero-stat" data-reveal="seam">
+        <span class="stat-num">01</span>
+        <p data-i18n="h.stat">One firm from incorporation to operations</p>
       </div>
     </div>
   </section>
 
-  <section class="about-section">
+  
+  <section class="band-ivory roadmap-teaser has-section-ghost">
+    <span class="section-ghost section-ghost-right" aria-hidden="true">01</span>
     <div class="container">
-      <div class="about-text" data-reveal>
-        <p class="drop-cap" data-i18n="ap.p1">Connaissez-vous le Balzac ? Ce lieu entièrement consacré à la francophonie est niché au cœur du quartier des galeries et des vendeurs d'émeraudes, sur Charoen Krung 43. A quelques pas seulement de l'ambassade de France et de la poste centrale, non loin du débarcadère d'où vous pourrez aller à la découverte des plus beaux temples de la ville et du Palais Royal .</p>
-        <p data-i18n="ap.p2">A l'initiative d'une famille d'écrivains et de voyageurs suisses, le Balzac est à la croisée des chemins de traverse pour les francophiles . Un peu comme un de ces lieux emblématiques du Boulevard Saint-Michel, où l'on aime venir flâner après le boulot, vendre ou acheter quelques brûlots ou beaux livres dénichés à bon prix .</p>
+      <div class="section-head" data-reveal>
+        <p class="section-label"><span class="label-num">01</span> <span data-i18n="sec01.title">The roadmap</span></p>
+        <div class="gold-line" data-reveal="line"></div>
       </div>
+      
+      <div class="stepper roadmap-strip" data-reveal><div class="stepper-step roadmap-step"><span class="step-num">01</span><p data-i18n="r1">Step</p></div><div class="stepper-step roadmap-step"><span class="step-num">02</span><p data-i18n="r2">Step</p></div><div class="stepper-step roadmap-step"><span class="step-num">03</span><p data-i18n="r3">Step</p></div><div class="stepper-step roadmap-step"><span class="step-num">04</span><p data-i18n="r4">Step</p></div><div class="stepper-step roadmap-step"><span class="step-num">05</span><p data-i18n="r5">Step</p></div></div>
+      <div class="section-cta" data-reveal><a href="market-entry.html#finder" class="btn btn-ghost" data-i18n="r.cta">Where are you on the road?</a></div>
+  
     </div>
   </section>
 
-  <section class="week-section band-white">
+  
+  <section class="band-white why-section has-section-ghost">
+    <span class="section-ghost section-ghost-right" aria-hidden="true">02</span>
     <div class="container">
-      <div class="week-board" data-reveal="scale">
-        <h2 class="section-title chapter-title"><span class="chapter-prefix" data-i18n-skip>Chapitre II · </span><span data-i18n="mo.title">Ce mois-ci au Balzac</span></h2>
-        <div class="brass-line"></div>
-        <span class="marginalia marginalia--board" data-i18n-skip aria-hidden="true">entrée libre, comme toujours</span>
-        <div class="week-grid">
-          <div class="week-item">
-            <h3 data-i18n="mo1.title">Ciné-club · films en version originale</h3>
-            <p data-i18n="mo1.desc">Une soirée, un classique, un débat autour d'un verre.</p>
-            <a href="contact.html?ev=cine#visit" class="btn btn-ghost-brass" data-i18n="mo.btn">Réserver ma place</a>
-          </div>
-          <div class="week-item">
-            <h3 data-i18n="mo2.title">Exposition du mois · vernissage</h3>
-            <p data-i18n="mo2.desc">Un artiste, un accrochage, un verre de bienvenue.</p>
-            <a href="contact.html?ev=expo#visit" class="btn btn-ghost-brass" data-i18n="mo.btn">Réserver ma place</a>
-          </div>
-          <div class="week-item">
-            <h3 data-i18n="mo3.title">Café-rencontres et lectures</h3>
-            <p data-i18n="mo3.desc">Auteurs, dédicaces et conversations en français.</p>
-            <a href="contact.html?ev=lecture#visit" class="btn btn-ghost-brass" data-i18n="mo.btn">Réserver ma place</a>
-          </div>
-        </div>
-        <p class="week-note" data-i18n="mo.note">Sur le site final, ce tableau se met à jour en quelques secondes, sans webmaster.</p>
+      <div class="section-head" data-reveal>
+        <p class="section-label"><span class="label-num">02</span> <span data-i18n="sec02.title">Why Outsiders</span></p>
+        <div class="gold-line" data-reveal="line"></div>
       </div>
+      
+      <div class="why-grid stagger">
+        <div class="card why-card" data-reveal><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 4v16M4 12h16"></path><path d="M12 6.5l1.8 4.2H10.2L12 6.5z"></path></svg></span><h3 data-i18n="w1.t">Clarity first</h3><p data-i18n="w1.p">We explain every option and every step before you commit, in plain language.</p></div>
+        <div class="card why-card" data-reveal><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 15c3.5-2.5 6.5-2.5 9 0s5.5 2.5 9 0"></path><path d="M12 12V9"></path><path d="M9.5 9h5l-2.5-3-2.5 3z"></path></svg></span><h3 data-i18n="w2.t">Swiss-Thai by design</h3><p data-i18n="w2.p">A Thai attorney and a Swiss adviser on the same file: local law, international standards.</p></div>
+        <div class="card why-card" data-reveal><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 4h10v14H7z"></path><path d="M9.5 8h5M9.5 11h5M9.5 14h3"></path><circle cx="17.5" cy="17" r="2.5"></circle></svg></span><h3 data-i18n="w3.t">Fixed scopes, no surprises</h3><p data-i18n="w3.p">Clear engagement letters and transparent fees before work begins.</p></div>
+      </div>
+  
     </div>
   </section>
 
-  <div class="quote-band" aria-hidden="true">
-    <p data-i18n-skip>&laquo; Déguster un café en écoutant un vinyle de Brassens au pays du sourire a une saveur toute particulière. &raquo;</p>
-  </div>
-
-  <section class="gallery-wall-section band-card">
+  <section class="pull-quote-band band-ivory" data-reveal>
     <div class="container">
-      <div class="section-head center" data-reveal>
-        <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre III · </span><span data-i18n="nav.galerie">Galerie</span></p>
-        <div class="brass-line"></div>
-      </div>
-      <div class="gallery-wall-frame" data-reveal="scale">
-        <div class="gallery-wall-grid">
-          <button type="button" class="polaroid polaroid--r-2" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.books" data-reveal>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/books2.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async"></span>
-            <span class="polaroid-caption" data-i18n="cap.books">le mur des romans</span>
-          </button>
-          <button type="button" class="polaroid polaroid--r1" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.cafe" data-reveal>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/cafe2.jpg" alt="" data-i18n-alt="alt.cafe" data-fallback loading="lazy" decoding="async"></span>
-            <span class="polaroid-caption" data-i18n="cap.cafe">le comptoir</span>
-          </button>
-          <button type="button" class="polaroid polaroid--r2" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.gallery" data-reveal>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/gallery2.jpg" alt="" data-i18n-alt="alt.gallery" data-fallback loading="lazy" decoding="async"></span>
-            <span class="polaroid-caption" data-i18n="cap.gallery">l'accrochage du mois</span>
-          </button>
-          <button type="button" class="polaroid polaroid--r-1" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.events" data-reveal>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/events2.jpg" alt="" data-i18n-alt="alt.event" data-fallback loading="lazy" decoding="async"></span>
-            <span class="polaroid-caption" data-i18n="cap.events">soir de vernissage</span>
-          </button>
-          <button type="button" class="polaroid polaroid--r-1" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.homemade" data-reveal>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/cafe3.jpg" alt="" data-i18n-alt="alt.cafe" data-fallback loading="lazy" decoding="async"></span>
-            <span class="polaroid-caption" data-i18n="cap.homemade">fait maison</span>
-          </button>
-        </div>
-      </div>
+      <blockquote class="pull-quote" data-i18n="pq">Certainty is not a promise, it is a process.</blockquote>
     </div>
   </section>
 
-  <section class="boutique-teaser band-white">
+  
+  <section class="band-midnight lead-band has-section-ghost">
+    <span class="section-ghost section-ghost-right" aria-hidden="true">03</span>
     <div class="container">
-      <div class="boutique-teaser-inner" data-reveal>
-        <div class="boutique-teaser-photos">
-          <div class="polaroid polaroid--r-1" data-curtain>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/books2.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async"></span>
-          </div>
-          <div class="polaroid polaroid--r1" data-curtain>
-            <span class="polaroid-photo"><img class="frame-img" src="assets/img/gallery1.jpg" alt="" data-i18n-alt="alt.gallery" data-fallback loading="lazy" decoding="async"></span>
-          </div>
-        </div>
-        <div class="boutique-teaser-copy">
-          <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre IV · </span><span data-i18n="nav.boutique">Boutique</span></p>
-          <h2 data-i18n="b.tease">La boutique est ouverte, même à minuit</h2>
-        </div>
-        <a href="boutique.html" class="btn" data-i18n="nav.boutique">Boutique</a>
+      <div class="section-head" data-reveal>
+        <p class="section-label"><span class="label-num">03</span> <span data-i18n="sec03.title">Market entry checklist</span></p>
+        <div class="gold-line" data-reveal="line"></div>
       </div>
+      
+      <div class="lead-inner checklist-layout" data-reveal>
+        <div class="lead-copy">
+          <h2 data-i18n="lm.h">The Thailand Market Entry Checklist</h2>
+          <p data-i18n="lm.p">Twelve questions to answer before you incorporate, from ownership limits to work permit quotas. Free, by email.</p>
+        </div>
+        <form class="lead-form dark-form" novalidate>
+          <label class="visually-hidden" for="lead-email">Email</label>
+          <input type="email" id="lead-email" name="email" required placeholder="Email" data-i18n-placeholder="form.email">
+          <button type="submit" class="btn btn-on-dark" data-i18n="lm.btn">Send me the checklist</button>
+        </form>
+      </div>
+  
     </div>
   </section>
 
-  <section class="reviews-section band-white">
+  
+  <section class="band-ivory reviews-section has-section-ghost">
+    <span class="section-ghost section-ghost-right" aria-hidden="true">04</span>
     <div class="container">
-      <div class="section-head center" data-reveal>
-        <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre V · </span><span data-i18n-skip>Avis</span></p>
-        <div class="brass-line"></div>
+      <div class="section-head" data-reveal>
+        <p class="section-label"><span class="label-num">04</span> <span data-i18n="sec04.title">Client references</span></p>
+        <div class="gold-line" data-reveal="line"></div>
       </div>
+      
       <div class="reviews-grid stagger">
-        <span class="marginalia marginalia--reviews" data-i18n-skip aria-hidden="true">merci !</span>
         <div class="card review-card" data-reveal="left">
-          <p class="quote" data-i18n="rv1.text">Une parenthèse parisienne à Bangkok. On y retourne pour les livres, on y reste pour le chocolat chaud.</p>
-          <p class="author" data-i18n="rv1.author">Une habituée</p>
+          <p class="quote" data-i18n="rv1.text">They took our Zurich HQ from zero to an operating Thai subsidiary in nine weeks, and we understood every step.</p>
+          <p class="author" data-i18n="rv1.author">COO, Swiss manufacturing group</p>
         </div>
         <div class="card review-card" data-reveal="right">
-          <p class="quote" data-i18n="rv2.text">Le ciné-club du Balzac est devenu notre rendez-vous du mois. Accueil adorable.</p>
-          <p class="author" data-i18n="rv2.author">Un couple d'expatriés</p>
+          <p class="quote" data-i18n="rv2.text">Finally a firm that answers emails the same day, in French.</p>
+          <p class="author" data-i18n="rv2.author">Founder, Geneva software company</p>
         </div>
       </div>
-      <p class="review-sample-note" data-i18n="rv.sample">Avis exemple · remplacé par vos vrais avis Google</p>
+      <p class="review-sample-note" data-i18n="rv.sample">Sample testimonial · replaced by real client references</p>
+  
     </div>
   </section>
 
-  <section class="closing-band">
+  <section class="closing-band band-midnight">
     <div class="container text-center">
-      <h2 data-reveal data-i18n="cl.h">La porte est ouverte, le café est chaud</h2>
-      <a href="contact.html#visit" class="btn btn-outline-light" data-reveal data-i18n="nav.cta">Nous rendre visite</a>
+      <h2 data-reveal data-i18n="cl.h">Bring your business to Bangkok</h2>
+      <a href="contact.html#consult" class="btn btn-on-dark" data-reveal data-i18n="nav.cta">Book a consultation</a>
     </div>
   </section>
-
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer band-midnight">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="footer-logo" aria-label="Balzac Bangkok">
-          <img src="assets/img/logo.png" alt="" class="footer-logo-img" data-i18n-alt="alt.logo" data-fallback width="120" height="40" decoding="async">
-        </a>
-        <p data-i18n="f.tag">Librairie, café et galerie francophones à Bangkok.</p>
+        <a href="index.html" class="footer-logo footer-logo-chip" aria-label="Outsiders Legal"><img src="assets/img/logo.png" alt="" class="footer-logo-img" data-i18n-alt="alt.logo" width="120" height="44" decoding="async"></a>
+        <p data-i18n="f.tag">Swiss and Thai legal counsel on Charoen Krung, Bangkok.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="f.col.contact">Horaires &amp; contact</h4>
-        <a class="footer-line" href="tel:+66948937373">+66 94 893 7373</a>
-        <a class="footer-line" href="https://wa.me/66816964798" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="footer-line" href="mailto:balzacbangkok@gmail.com">balzacbangkok@gmail.com</a>
-        <a class="footer-line" href="https://instagram.com/balzacbangkok" target="_blank" rel="noopener">Instagram @balzacbangkok</a>
+        <h4 data-i18n="f.col.contact">Contact</h4>
+        <p class="phone-label" data-i18n="f.phone.en">Thai &amp; English +66 909 730 227</p>
+        <a class="footer-line" href="tel:+66909730227">+66 909 730 227</a>
+        <p class="phone-label" data-i18n="f.phone.fr">Français +66 816 964 798</p>
+        <a class="footer-line" href="tel:+66816964798">+66 816 964 798</a>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="f.col.find">Nous trouver</h4>
-        <p data-i18n="f.addr">Soi Charoen Krung 43, Bang Rak, Bangkok 10500</p>
+        <h4 data-i18n="f.col.find">Find us</h4>
+        <p data-i18n="f.addr">No.357 Soi Charoen Krung 43, Bang Rak, Bangkok 10500</p>
+        <p class="footer-lang" data-i18n="f.lang">We work in English, French, German, Spanish and Thai.</p>
       </div>
     </div>
-    <p class="footer-credit" data-i18n="f.credit">Maquette par Mikaro Studio · mikaro.studio</p>
+    <div class="footer-credit-wrap">
+      <p class="footer-credit" data-i18n="f.credit">Design preview by Mikaro Studio · mikaro.studio</p>
+    </div>
   </div>
 </footer>
-
-<a href="https://wa.me/66816964798" target="_blank" rel="noopener" class="float-reserve" aria-label="WhatsApp" data-i18n-aria-label="float.txt">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M8 3h8a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-5l-4 3v-3H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"></path>
-    <path d="M9.5 10.5h.01M12 10.5h.01M14.5 10.5h.01"></path>
-    <path d="M12 14v-1"></path>
-  </svg>
-  <span data-i18n="float.txt">Écrivez-nous</span>
+<a href="contact.html#consult" class="float-reserve" aria-label="Book a consultation" data-i18n-aria-label="float.txt">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+  <span data-i18n="float.txt">Book a consultation</span>
 </a>
-
+<div class="modal-overlay lm-modal" role="dialog" aria-modal="true">
+  <div class="modal-box"><p data-i18n="lm.modal">This is a design preview, nothing was sent.</p><button type="button" class="btn modal-close" data-i18n="modal.close">Close</button></div>
+</div>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

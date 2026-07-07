@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n-page-title="title.contact">
+<html lang="en" data-i18n-page-title="title.services">
 <head>
 <meta charset="UTF-8">
 <script>document.documentElement.classList.add('js');</script>
@@ -8,14 +8,14 @@
 <link rel="icon" href="assets/img/logo.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/logo.png">
 <title>Outsiders Legal</title>
-<meta name="description" content="Contact Outsiders Legal in Bangkok.">
+<meta name="description" content="Legal services for foreign-owned businesses in Thailand.">
 <link rel="preload" href="fonts/libre-caslon-text-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/libre-caslon-text-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-500.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="page-contact">
+<body class="page-services">
 <div class="preview-ribbon" role="note">
   <p data-i18n="ribbon.text">Live design preview prepared for Outsiders Legal by Mikaro Studio. Not the firm's official website yet.</p>
   <button type="button" class="preview-ribbon-close" aria-label="Close" data-i18n-aria-label="ribbon.close">&times;</button>
@@ -51,59 +51,18 @@
   </div>
 </header>
 <main>
-  <section id="consult" class="consult-section band-ivory">
-    <div class="container">
-      <div class="card consult-form reserve-form" data-reveal>
-        <form novalidate>
-          <div class="form-grid">
-            <div class="form-field"><label for="consult-company" data-i18n="form.company">Company</label><input type="text" id="consult-company" name="company" autocomplete="organization"></div>
-            <div class="form-field"><label for="consult-name" data-i18n="form.name">Name</label><input type="text" id="consult-name" name="name" required autocomplete="name"></div>
-            <div class="form-field"><label for="consult-email" data-i18n="form.email">Email</label><input type="email" id="consult-email" name="email" required autocomplete="email"></div>
-            <div class="form-field"><label for="consult-phone" data-i18n="form.phone">Phone or WhatsApp</label><input type="text" id="consult-phone" name="phone"></div>
-            <div class="form-field"><label for="consult-topic" data-i18n="form.topic">Topic</label>
-              <select id="consult-topic" name="topic" required>
-                <option value="entry" data-i18n="form.topic.entry">Market entry</option>
-                <option value="reg" data-i18n="form.topic.reg">Company registration</option>
-                <option value="boi" data-i18n="form.topic.boi">BOI</option>
-                <option value="visa" data-i18n="form.topic.visa">Visas &amp; work permits</option>
-                <option value="contracts" data-i18n="form.topic.contracts">Contracts</option>
-                <option value="corporate" data-i18n="form.topic.corporate">Corporate &amp; Commercial</option>
-                <option value="immigration" data-i18n="form.topic.immigration">Immigration: visas &amp; work permits</option>
-                <option value="employment" data-i18n="form.topic.employment">Employment &amp; labor</option>
-                <option value="property" data-i18n="form.topic.property">Property &amp; leases</option>
-                <option value="ip" data-i18n="form.topic.ip">Intellectual property &amp; trademarks</option>
-                <option value="other" data-i18n="form.topic.other">Other</option>
-              </select>
-            </div>
-            <div class="form-field"><label for="consult-note" data-i18n="form.message">Message</label><textarea id="consult-note" name="message"></textarea></div>
-            <div class="form-actions"><button type="submit" class="btn" data-i18n="c.btn">Request a consultation</button></div>
-          </div>
-        </form>
-      </div>
+  <section class="page-hero band-ivory">
+    <div class="container section-head" data-reveal>
+      <h1 data-i18n="s.h1">Services</h1>
+      <p class="section-sub" data-i18n="s.sub">Market entry is the core.</p>
+      <div class="gold-line" data-reveal="line"></div>
     </div>
   </section>
-  <section class="info-section band-midnight">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <h1 data-i18n="ct.h1">Contact Outsiders Legal</h1>
-        <div class="gold-line" data-reveal="line"></div>
-      </div>
-      <div class="info-grid stagger">
-        <div class="card info-card on-dark" data-reveal>
-          <h3 data-i18n="c.card.phone">Phone</h3>
-          <p class="phone-label" data-i18n="f.phone.en">Thai &amp; English +66 909 730 227</p>
-          <a href="tel:+66909730227">+66 909 730 227</a>
-          <p class="phone-label" data-i18n="f.phone.fr">Français +66 816 964 798</p>
-          <a href="tel:+66816964798">+66 816 964 798</a>
-        </div>
-        <div class="card info-card on-dark" data-reveal>
-          <h3 data-i18n="c.card.address">Address</h3>
-          <p data-i18n="f.addr">No.357 Soi Charoen Krung 43, Bang Rak, Bangkok 10500</p>
-        </div>
-      </div>
-      <div class="card map-card on-dark" data-reveal="scale"><iframe src="https://maps.google.com/maps?q=Outsiders%20Legal%20Charoen%20Krung%2043%20Bangkok&amp;output=embed" loading="lazy" title="Outsiders Legal map"></iframe></div>
-      <div class="map-open" data-reveal><a href="https://maps.google.com/?q=Outsiders+Legal+Charoen+Krung+43+Bangkok" target="_blank" rel="noopener" class="btn btn-on-dark" data-i18n="map.open">Open in Google Maps</a></div>
+  <section class="services-grid-section band-white">
+    <div class="container services-grid stagger">
+      <div class="card service-card" data-reveal><h3 data-i18n="s1.t">Service</h3><p data-i18n="s1.p">Description</p><a href="contact.html?ev=corporate#consult" class="btn btn-ghost btn-service-cta" data-i18n="s.cta">Discuss this topic</a></div><div class="card service-card" data-reveal><h3 data-i18n="s2.t">Service</h3><p data-i18n="s2.p">Description</p><a href="contact.html?ev=immigration#consult" class="btn btn-ghost btn-service-cta" data-i18n="s.cta">Discuss this topic</a></div><div class="card service-card" data-reveal><h3 data-i18n="s3.t">Service</h3><p data-i18n="s3.p">Description</p><a href="contact.html?ev=contracts#consult" class="btn btn-ghost btn-service-cta" data-i18n="s.cta">Discuss this topic</a></div><div class="card service-card" data-reveal><h3 data-i18n="s4.t">Service</h3><p data-i18n="s4.p">Description</p><a href="contact.html?ev=employment#consult" class="btn btn-ghost btn-service-cta" data-i18n="s.cta">Discuss this topic</a></div><div class="card service-card" data-reveal><h3 data-i18n="s5.t">Service</h3><p data-i18n="s5.p">Description</p><a href="contact.html?ev=property#consult" class="btn btn-ghost btn-service-cta" data-i18n="s.cta">Discuss this topic</a></div><div class="card service-card" data-reveal><h3 data-i18n="s6.t">Service</h3><p data-i18n="s6.p">Description</p><a href="contact.html?ev=ip#consult" class="btn btn-ghost btn-service-cta" data-i18n="s.cta">Discuss this topic</a></div>
     </div>
+    <div class="container"><p class="muted-note center-note" data-reveal data-i18n="s.more">The firm also advises on civil, family and other matters, ask us.</p></div>
   </section>
 </main>
 
@@ -136,9 +95,6 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
   <span data-i18n="float.txt">Book a consultation</span>
 </a>
-<div class="modal-overlay" role="dialog" aria-modal="true">
-  <div class="modal-box"><p data-i18n="c.modal">This is a design preview, nothing was sent yet.</p><button type="button" class="btn modal-close" data-i18n="modal.close">Close</button></div>
-</div>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

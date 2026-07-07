@@ -1,10 +1,10 @@
-/* Balzac Bangkok: reliability-first ribbon, nav, reveal, curtain reveals,
-   image blur-up, lightbox, contact form, event prefill. */
+/* Outsiders Legal: ribbon, nav, reveal, curtain reveals, image blur-up,
+   contact form, structure finder, route prefill. */
 
 (function () {
   "use strict";
 
-  var RIBBON_KEY = "cp_ribbon_dismissed";
+  var RIBBON_KEY = "ol_ribbon_dismissed";
   var SAFETY_MS = 2600;
   var prefersReducedMotion = false;
 
@@ -19,13 +19,13 @@
       fn();
     } catch (err) {
       if (window.console && console.warn) {
-        console.warn("Balzac: " + name + " failed to initialise", err);
+        console.warn("Outsiders: " + name + " failed to initialise", err);
       }
     }
   }
 
   function t(key) {
-    var i18n = window.chezPapaI18n;
+    var i18n = window.olI18n;
     if (!i18n || !i18n.dict) {
       return "";
     }
@@ -44,13 +44,13 @@
     safe("curtain reveals", initCurtainReveals);
     safe("image load", initImageLoad);
     safe("safety net", initSafetyNet);
-    safe("lightbox", initLightbox);
     safe("image fallback", initImageFallback);
     safe("logo fallback", initLogoFallback);
     safe("floating reserve", initFloatingReserve);
     safe("reservation form", initReservationForm);
-    safe("sell form", initSellForm);
-    safe("event prefill", initEventPrefill);
+    safe("lead magnet", initLeadMagnetForm);
+    safe("structure finder", initStructureFinder);
+    safe("route prefill", initRoutePrefill);
   });
 
   /* ------------------------------------------------------------------ */
@@ -239,7 +239,7 @@
       }
       positionLangThumb(toggle);
     });
-    document.addEventListener("cp:langchange", function () {
+    document.addEventListener("ol:langchange", function () {
       document.querySelectorAll(".lang-toggle.seg").forEach(positionLangThumb);
     });
   }
@@ -751,7 +751,7 @@
 
   function initLogoFallback() {
     [
-      { wrap: ".brand-chip", img: ".brand-chip-logo" },
+      { wrap: ".brand-link", img: ".header-logo" },
       { wrap: ".footer-logo", img: ".footer-logo-img" }
     ].forEach(function (pair) {
       var wrap = document.querySelector(pair.wrap);
@@ -783,46 +783,12 @@
   }
 
   function initReservationForm() {
-    var form = document.querySelector(".visit-form form, .reserve-form form");
-    var modal = document.querySelector(".modal-overlay:not(.sell-modal)");
+    var form = document.querySelector(".consult-form form, .visit-form form, .reserve-form form");
+    var modal = document.querySelector(".modal-overlay:not(.sell-modal):not(.lm-modal)");
     if (!form || !modal) {
       return;
     }
-
-    var modalClose = modal.querySelector(".modal-close");
-
-    function openModal() {
-      modal.classList.add("is-open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-      modal.classList.remove("is-open");
-      if (!document.body.classList.contains("lightbox-open")) {
-        document.body.style.overflow = "";
-      }
-    }
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      openModal();
-    });
-
-    if (modalClose) {
-      modalClose.addEventListener("click", closeModal);
-    }
-
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && modal.classList.contains("is-open")) {
-        closeModal();
-      }
-    });
+    bindDemoModal(form, modal);
   }
 
   function initSellForm() {
@@ -868,45 +834,62 @@
     });
   }
 
-  function initEventPrefill() {
-    var noteField = document.getElementById("visit-note");
-    var reasonField = document.getElementById("visit-reason");
+  function initRoutePrefill() {
+    var noteField = document.getElementById("consult-note");
+    var topicField = document.getElementById("consult-topic");
     if (!noteField) {
       return;
     }
 
     var params = new URLSearchParams(window.location.search);
+    var route = params.get("route");
     var ev = params.get("ev");
-    var validEvents = ["cine", "expo", "lecture", "collab"];
-    if (!ev || validEvents.indexOf(ev) === -1) {
+    var validRoutes = ["boi", "th", "ro"];
+    var validEv = ["corporate", "immigration", "contracts", "employment", "property", "ip"];
+    var evTitles = {
+      corporate: "s1.t",
+      immigration: "s2.t",
+      contracts: "s3.t",
+      employment: "s4.t",
+      property: "s5.t",
+      ip: "s6.t"
+    };
+    var noteKey = null;
+    var topicValue = null;
+
+    if (ev && validEv.indexOf(ev) !== -1) {
+      topicValue = ev;
+      noteKey = evTitles[ev];
+    } else if (route && validRoutes.indexOf(route) !== -1) {
+      topicValue = route === "boi" ? "boi" : route === "th" ? "reg" : "entry";
+      noteKey = "note." + route;
+    } else {
       return;
     }
 
-    if (reasonField) {
-      reasonField.value = ev;
+    if (topicField && topicValue) {
+      topicField.value = topicValue;
     }
 
-    var key = "note." + ev;
-
     function knownValues() {
-      var i18n = window.chezPapaI18n;
+      var i18n = window.olI18n;
       if (!i18n || !i18n.dict) {
         return [];
       }
-      return ["en", "fr", "th"]
+      return ["en", "fr", "de"]
         .map(function (lang) {
-          return i18n.dict[lang] && i18n.dict[lang][key];
+          return i18n.dict[lang] && i18n.dict[lang][noteKey];
         })
         .filter(Boolean);
     }
 
     function applyPrefill() {
-      var i18n = window.chezPapaI18n;
+      var i18n = window.olI18n;
       if (!i18n || !i18n.dict) {
         return;
       }
-      var lang = document.documentElement.getAttribute("lang") || "fr";
-      var value = i18n.dict[lang] && i18n.dict[lang][key];
+      var lang = document.documentElement.getAttribute("lang") || "en";
+      var value = i18n.dict[lang] && i18n.dict[lang][noteKey];
       if (!value) {
         return;
       }
@@ -917,8 +900,122 @@
     }
 
     applyPrefill();
-    document.addEventListener("cp:langchange", function () {
+    document.addEventListener("ol:langchange", function () {
       window.setTimeout(applyPrefill, 0);
+    });
+  }
+
+  function initLeadMagnetForm() {
+    var form = document.querySelector(".lead-form form");
+    var modal = document.querySelector(".lm-modal");
+    if (!form || !modal) {
+      return;
+    }
+    bindDemoModal(form, modal);
+  }
+
+  function initStructureFinder() {
+    var root = document.getElementById("finder");
+    if (!root) {
+      return;
+    }
+
+    var resultBox = root.querySelector(".finder-result");
+    var resultText = root.querySelector(".finder-result-text");
+    var resultCta = root.querySelector(".finder-result-cta");
+    var answers = { q1: "", q2: "", q3: "" };
+
+    function getResultKey() {
+      if (answers.q1 === "reg") {
+        return "ro";
+      }
+      if (answers.q1 === "mfg" || (answers.q2 === "yes" && answers.q3 === "yes")) {
+        return "boi";
+      }
+      if (answers.q1 === "svc" && answers.q2 === "flex") {
+        return "th";
+      }
+      if (answers.q2 === "yes") {
+        return "boi";
+      }
+      return "th";
+    }
+
+    function updateResult() {
+      if (!answers.q1 || !answers.q2 || !answers.q3) {
+        if (resultBox) {
+          resultBox.hidden = true;
+        }
+        return;
+      }
+      var key = getResultKey();
+      var textKey = key === "boi" ? "f.rBOI" : key === "th" ? "f.rTH" : "f.rRO";
+      if (resultText) {
+        resultText.textContent = t(textKey);
+      }
+      if (resultCta) {
+        resultCta.href = "contact.html?route=" + key + "#consult";
+      }
+      if (resultBox) {
+        resultBox.hidden = false;
+      }
+    }
+
+    root.querySelectorAll(".finder-option input").forEach(function (input) {
+      input.addEventListener("change", function () {
+        var q = input.name;
+        if (q === "q1" || q === "q2" || q === "q3") {
+          answers[q] = input.value;
+          input.closest(".finder-option").classList.add("is-selected");
+          root.querySelectorAll('.finder-option input[name="' + q + '"]').forEach(function (other) {
+            if (other !== input) {
+              other.closest(".finder-option").classList.remove("is-selected");
+            }
+          });
+          updateResult();
+        }
+      });
+    });
+
+    document.addEventListener("ol:langchange", function () {
+      window.setTimeout(updateResult, 0);
+    });
+  }
+
+  function bindDemoModal(form, modal) {
+    var modalClose = modal.querySelector(".modal-close");
+
+    function openModal() {
+      modal.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      if (!document.body.classList.contains("lightbox-open")) {
+        document.body.style.overflow = "";
+      }
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      openModal();
+    });
+
+    if (modalClose) {
+      modalClose.addEventListener("click", closeModal);
+    }
+
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
     });
   }
 })();
