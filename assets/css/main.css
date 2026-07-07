@@ -1515,10 +1515,11 @@ body.page-home .hero-cascade-item {
   background: var(--ink);
   border: 1px solid var(--gold);
   border-radius: 20px;
-  padding: 48px 32px;
+  padding: 48px 32px 32px;
   color: var(--paper);
   position: relative;
   box-shadow: var(--shadow-soft);
+  overflow: visible;
 }
 
 .week-board::before {
@@ -3005,6 +3006,7 @@ button:focus-visible,
 
 .about-section {
   background: var(--paper);
+  padding: 56px 0 64px;
 }
 
 .about-text {
@@ -3039,7 +3041,7 @@ blockquote,
 
 .quote-band {
   background: var(--ink);
-  padding: 48px 24px;
+  padding: 56px 24px;
   text-align: center;
 }
 
@@ -3555,7 +3557,6 @@ button.polaroid {
 
 .gallery-wall-section {
   padding: 72px 0;
-  overflow: hidden;
 }
 
 .gallery-wall-frame {
@@ -3568,42 +3569,76 @@ button.polaroid {
 .gallery-wall-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 22px);
-  align-items: center;
+  gap: 24px;
+  align-items: start;
   max-width: 100%;
 }
 
 .gallery-wall-grid .polaroid:nth-child(1) {
   grid-column: 1 / span 4;
-  justify-self: start;
-  width: min(100%, 220px);
+  grid-row: 1;
 }
 
 .gallery-wall-grid .polaroid:nth-child(2) {
-  grid-column: 4 / span 3;
-  justify-self: center;
-  width: min(100%, 180px);
-  margin-top: 24px;
+  grid-column: 5 / span 4;
+  grid-row: 1;
 }
 
 .gallery-wall-grid .polaroid:nth-child(3) {
-  grid-column: 7 / span 4;
-  justify-self: end;
-  width: min(100%, 240px);
+  grid-column: 9 / span 4;
+  grid-row: 1;
 }
 
 .gallery-wall-grid .polaroid:nth-child(4) {
-  grid-column: 2 / span 3;
-  justify-self: start;
-  width: min(100%, 190px);
-  margin-top: -8px;
+  grid-column: 2 / span 5;
+  grid-row: 2;
 }
 
 .gallery-wall-grid .polaroid:nth-child(5) {
-  grid-column: 9 / span 3;
-  justify-self: end;
-  width: min(100%, 170px);
-  margin-top: 12px;
+  grid-column: 7 / span 5;
+  grid-row: 2;
+}
+
+.gallery-wall-grid .polaroid {
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+}
+
+.hero-v2-postcard-mobile {
+  display: none;
+}
+
+.hero-v2-postcard-mobile .polaroid-photo {
+  aspect-ratio: 3 / 4;
+}
+
+body.page-home .hero-v2-text .hero-cascade-item {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+body.page-home .hero-v2-text.is-visible .hero-cascade-item,
+body.page-home .hero-v2-text .hero-cascade-item.hero-delay-1 {
+  animation: hero-cascade-in 0.7s var(--ease) forwards;
+}
+
+body.page-home .hero-v2-text.is-visible .hero-delay-1,
+body.page-home .hero-v2-text .hero-delay-1 { animation-delay: 0ms; }
+body.page-home .hero-v2-text.is-visible .hero-delay-2,
+body.page-home .hero-v2-text .hero-delay-2 { animation-delay: 80ms; }
+body.page-home .hero-v2-text.is-visible .hero-delay-3,
+body.page-home .hero-v2-text .hero-delay-3 { animation-delay: 160ms; }
+body.page-home .hero-v2-text.is-visible .hero-delay-4,
+body.page-home .hero-v2-text .hero-delay-4 { animation-delay: 240ms; }
+body.page-home .hero-v2-text.is-visible .hero-delay-5,
+body.page-home .hero-v2-text .hero-delay-5 { animation-delay: 320ms; }
+
+@keyframes hero-cascade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .boutique-teaser {
@@ -3635,20 +3670,6 @@ button.polaroid {
 
 .week-section {
   position: relative;
-}
-
-.week-board {
-  position: relative;
-}
-
-.week-visual {
-  margin-top: 32px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.week-visual .polaroid {
-  width: min(100%, 240px);
 }
 
 .lib-spread-section {
@@ -3829,6 +3850,50 @@ button.polaroid {
   .shop-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .gallery-wall-grid .polaroid:nth-child(1) { grid-column: 1 / span 6; grid-row: 1; }
+  .gallery-wall-grid .polaroid:nth-child(2) { grid-column: 7 / span 6; grid-row: 1; }
+  .gallery-wall-grid .polaroid:nth-child(3) { grid-column: 1 / span 12; grid-row: 2; max-width: 320px; justify-self: center; }
+  .gallery-wall-grid .polaroid:nth-child(4) { grid-column: 1 / span 6; grid-row: 3; }
+  .gallery-wall-grid .polaroid:nth-child(5) { grid-column: 7 / span 6; grid-row: 3; }
+}
+
+@media (max-width: 899px) {
+  .hero-v2-postcard-mobile {
+    display: block;
+    width: min(100%, 360px);
+    margin: 0 auto 28px;
+  }
+
+  .hero-v2-stack--desktop {
+    display: none;
+  }
+
+  .hero-v2-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-v2-text .hero-ctas {
+    flex-direction: column;
+  }
+
+  .hero-v2-text .hero-ctas .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-v2-postcard-mobile {
+    display: none;
+  }
+
+  body.page-home .hero-v2-text .hero-cascade-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3844,16 +3909,6 @@ button.polaroid {
   .gallery-trio {
     grid-template-columns: 1fr 1fr;
   }
-
-  .gallery-wall-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .gallery-wall-grid .polaroid:nth-child(1) { grid-column: 1 / span 3; }
-  .gallery-wall-grid .polaroid:nth-child(2) { grid-column: 4 / span 3; margin-top: 0; }
-  .gallery-wall-grid .polaroid:nth-child(3) { grid-column: 1 / span 4; }
-  .gallery-wall-grid .polaroid:nth-child(4) { grid-column: 3 / span 4; }
-  .gallery-wall-grid .polaroid:nth-child(5) { grid-column: 2 / span 4; }
 }
 
 @media (max-width: 640px) {
@@ -3865,23 +3920,19 @@ button.polaroid {
   }
 
   .gallery-wall-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .gallery-wall-grid .polaroid:nth-child(n) {
-    grid-column: auto;
-    width: 100%;
-    margin-top: 0;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .boutique-teaser-photos .polaroid {
     width: 120px;
-  }
-
-  .hero-v2-stack {
-    min-height: 280px;
-    padding-inline: 0;
   }
 }
 
@@ -3893,5 +3944,11 @@ button.polaroid {
   .polaroid:hover,
   .polaroid:focus-visible {
     transform: rotate(var(--polaroid-rot, 0deg));
+  }
+
+  body.page-home .hero-v2-text .hero-cascade-item {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }

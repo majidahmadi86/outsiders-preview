@@ -86,6 +86,7 @@
       "cap.gallery": "l'accrochage du mois",
       "cap.events": "soir de vernissage",
       "cap.facade": "devant la boutique",
+      "cap.homemade": "fait maison",
 
       "l.h1": "La librairie",
       "l.sub": "Des romans classiques aux beaux livres, achet\u00e9s et vendus \u00e0 bon prix. Le stock change chaque semaine, la chasse fait partie du plaisir.",
@@ -243,6 +244,7 @@
       "cap.gallery": "this month's hanging",
       "cap.events": "opening night",
       "cap.facade": "out front",
+      "cap.homemade": "made in-house",
 
       "l.h1": "The bookshop",
       "l.sub": "From classics to art books, bought and sold at fair prices. The shelves change weekly, the hunt is part of the pleasure.",
@@ -400,6 +402,7 @@
       "cap.gallery": "\u0e07\u0e32\u0e19\u0e41\u0e02\u0e27\u0e19\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e40\u0e14\u0e37\u0e2d\u0e19",
       "cap.events": "\u0e04\u0e37\u0e19\u0e40\u0e1b\u0e34\u0e14\u0e19\u0e34\u0e17\u0e23\u0e23\u0e28\u0e01\u0e32\u0e23",
       "cap.facade": "\u0e2b\u0e19\u0e49\u0e32\u0e23\u0e49\u0e32\u0e19",
+      "cap.homemade": "\u0e17\u0e33\u0e40\u0e2d\u0e07\u0e17\u0e38\u0e01\u0e41\u0e01\u0e49\u0e27",
 
       "l.h1": "\u0e23\u0e49\u0e32\u0e19\u0e2b\u0e19\u0e31\u0e07\u0e2a\u0e37\u0e2d",
       "l.sub": "ตั้งแต่วรรณกรรมคลาสสิกถึงหนังสือศิลปะ รับซื้อและขายในราคายุติธรรม ชั้นหนังสือเปลี่ยนทุกสัปดาห์ การตามหาคือความสนุก",
