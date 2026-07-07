@@ -22,11 +22,8 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="brand-chip logo-missing" aria-label="Balzac Bangkok">
-      <span class="brand-chip-text">
-        <span class="name">BALZAC</span>
-        <span class="sub">LIBRAIRIE &middot; CAFÉ &middot; GALERIE</span>
-      </span>
+    <a href="index.html" class="brand-chip" aria-label="Balzac Bangkok">
+      <img src="assets/img/logo.png" alt="" class="brand-chip-logo" data-i18n-alt="alt.logo" data-fallback width="140" height="44" decoding="async">
     </a>
 
     <div class="nav-drawer">
@@ -41,6 +38,7 @@
           <li><a href="librairie.html" data-i18n="nav.librairie">Librairie</a></li>
           <li><a href="cafe.html" data-i18n="nav.cafe">Café</a></li>
           <li><a href="galerie.html" data-i18n="nav.galerie">Galerie</a></li>
+          <li><a href="boutique.html" data-i18n="nav.boutique">Boutique</a></li>
           <li><a href="events.html" data-i18n="nav.events">Événements</a></li>
           <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -67,52 +65,44 @@
 
 <main>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <div class="hero-cover-block">
-            <div class="hero-banner">
-              <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback loading="eager" fetchpriority="high" decoding="async">
-              <div class="hero-banner-scrim" aria-hidden="true"></div>
-            </div>
-            <div class="hero-cover-overlay">
-              <div class="hero-cascade-item hero-delay-1">
-                <p class="hero-tagline" data-i18n-skip>LIBRAIRIE &middot; CAFÉ &middot; GALERIE</p>
-              </div>
-              <div class="hero-cover-bottom">
-                <div class="hero-cascade-item hero-delay-2">
-                  <h1 data-i18n="h.h1">Un salon littéraire au cœur de Bangkok</h1>
-                </div>
-                <div class="hero-cascade-item hero-delay-3">
-                  <p class="hero-sub" data-i18n="h.sub">Fondé par une famille d'écrivains et de voyageurs suisses, le Balzac réunit une librairie francophone, un café et une galerie d'art, à deux pas de l'ambassade de France, dans le quartier des émeraudes.</p>
-                </div>
-              </div>
-            </div>
+  <section class="hero-v2">
+    <div class="container">
+      <div class="hero-v2-grid">
+        <div class="hero-v2-text" data-reveal>
+          <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre I · </span><span data-i18n="h.eyebrow">LIBRAIRIE · CAFÉ · GALERIE</span></p>
+          <h1 data-i18n="h.h1">Des livres, du café, et un peu de Paris à Charoen Krung</h1>
+          <p class="hero-sub" data-i18n="h.sub">Une famille d'écrivains suisses a posé ses malles dans le quartier des émeraudes et y a ouvert un salon : on y achète des romans, on y vend les siens, on y boit un chocolat en écoutant Brassens, et chaque mois un artiste accroche ses oeuvres aux murs.</p>
+          <div class="hero-ctas">
+            <a href="events.html" class="btn" data-i18n="h.cta1">Voir les événements</a>
+            <a href="librairie.html" class="btn btn-ghost" data-i18n="h.cta2">Vendre ou chercher un livre</a>
           </div>
-
-          <div class="hero-cascade-item hero-delay-4">
-            <div class="hero-ctas">
-              <a href="events.html" class="btn" data-i18n="h.cta1">Voir les événements</a>
-              <a href="librairie.html" class="btn btn-ghost" data-i18n="h.cta2">Vendre ou chercher un livre</a>
-            </div>
-          </div>
-
-          <ul class="trust-bar hero-cascade-item hero-delay-5">
+          <ul class="trust-bar">
             <li data-i18n="h.t1">À deux pas de l'ambassade de France</li>
             <li data-i18n="h.t2">Achat et vente de livres</li>
             <li data-i18n="h.t3">Expositions et ciné-club chaque mois</li>
           </ul>
         </div>
 
-        <div class="hero-collage">
-          <div class="hero-collage-ring" aria-hidden="true"></div>
-          <div class="hero-collage-grid">
-            <div class="collage-main frame-brass" data-curtain>
-              <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback loading="eager" fetchpriority="high" decoding="async">
+        <div class="hero-v2-stack" data-reveal="scale">
+          <div class="hero-v2-offset">
+            <div class="hero-v2-peek polaroid polaroid--r-3" data-curtain>
+              <span class="polaroid-photo">
+                <img class="frame-img" src="assets/img/books1.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async">
+              </span>
+              <span class="polaroid-caption" data-i18n="cap.books">le mur des romans</span>
             </div>
-            <div class="collage-print frame-brass" data-curtain>
-              <img class="frame-img" src="assets/img/books1.jpeg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async">
+            <div class="hero-v2-postcard polaroid polaroid--r15" data-curtain>
+              <span class="par-avion-chip" data-i18n-skip>PAR AVION</span>
+              <span class="polaroid-photo">
+                <img class="frame-img" src="assets/img/hero.jpg" alt="" data-i18n-alt="alt.hero" data-fallback loading="eager" fetchpriority="high" decoding="async">
+              </span>
+              <span class="polaroid-caption" data-i18n="cap.facade">devant la boutique</span>
+              <svg class="ex-libris" viewBox="0 0 80 80" aria-hidden="true">
+                <circle class="ex-libris-ring" cx="40" cy="40" r="36"></circle>
+                <circle class="ex-libris-ring" cx="40" cy="40" r="28"></circle>
+                <text class="ex-libris-b" x="40" y="46" text-anchor="middle">B</text>
+                <text class="ex-libris-label" x="40" y="18" text-anchor="middle">BALZAC · BANGKOK</text>
+              </svg>
             </div>
           </div>
         </div>
@@ -123,7 +113,7 @@
   <section class="about-section">
     <div class="container">
       <div class="section-head center" data-reveal>
-        <p class="eyebrow" data-i18n="eyebrow.about">A propos</p>
+        <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre II · </span><span data-i18n="eyebrow.about">A propos</span></p>
         <div class="brass-line"></div>
       </div>
       <div class="about-text" data-reveal>
@@ -136,16 +126,17 @@
   <section class="week-section band-white">
     <div class="container">
       <div class="week-board" data-reveal="scale">
-        <h2 class="section-title" data-i18n="mo.title">Ce mois-ci au Balzac</h2>
+        <h2 class="section-title chapter-title"><span class="chapter-prefix" data-i18n-skip>Chapitre III · </span><span data-i18n="mo.title">Ce mois-ci au Balzac</span></h2>
         <div class="brass-line"></div>
+        <span class="marginalia marginalia--board" data-i18n-skip aria-hidden="true">entrée libre, comme toujours</span>
         <div class="week-grid">
           <div class="week-item">
-            <h3 data-i18n="mo1.title">Ciné-club &middot; films en version originale</h3>
+            <h3 data-i18n="mo1.title">Ciné-club · films en version originale</h3>
             <p data-i18n="mo1.desc">Une soirée, un classique, un débat autour d'un verre.</p>
             <a href="contact.html?ev=cine#visit" class="btn btn-ghost-brass" data-i18n="mo.btn">Réserver ma place</a>
           </div>
           <div class="week-item">
-            <h3 data-i18n="mo2.title">Exposition du mois &middot; vernissage</h3>
+            <h3 data-i18n="mo2.title">Exposition du mois · vernissage</h3>
             <p data-i18n="mo2.desc">Un artiste, un accrochage, un verre de bienvenue.</p>
             <a href="contact.html?ev=expo#visit" class="btn btn-ghost-brass" data-i18n="mo.btn">Réserver ma place</a>
           </div>
@@ -157,6 +148,14 @@
         </div>
         <p class="week-note" data-i18n="mo.note">Sur le site final, ce tableau se met à jour en quelques secondes, sans webmaster.</p>
       </div>
+      <div class="week-visual" data-reveal>
+        <div class="polaroid polaroid--r1" data-curtain>
+          <span class="polaroid-photo">
+            <img class="frame-img" src="assets/img/events1.jpg" alt="" data-i18n-alt="alt.event" data-fallback loading="lazy" decoding="async">
+          </span>
+          <span class="polaroid-caption" data-i18n="cap.events">soir de vernissage</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -164,9 +163,63 @@
     <p data-i18n-skip>&laquo; Déguster un café en écoutant un vinyle de Brassens au pays du sourire a une saveur toute particulière. &raquo;</p>
   </div>
 
+  <section class="gallery-wall-section band-card">
+    <div class="container">
+      <div class="section-head center" data-reveal>
+        <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre IV · </span><span data-i18n="nav.galerie">Galerie</span></p>
+        <div class="brass-line"></div>
+      </div>
+      <div class="gallery-wall-frame" data-reveal="scale">
+        <div class="gallery-wall-grid">
+          <button type="button" class="polaroid polaroid--r-2" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.books" data-reveal>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/books2.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.books">le mur des romans</span>
+          </button>
+          <button type="button" class="polaroid polaroid--r1" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.cafe" data-reveal>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/cafe2.jpg" alt="" data-i18n-alt="alt.cafe" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.cafe">le comptoir</span>
+          </button>
+          <button type="button" class="polaroid polaroid--r2" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.gallery" data-reveal>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/gallery2.jpg" alt="" data-i18n-alt="alt.gallery" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.gallery">l'accrochage du mois</span>
+          </button>
+          <button type="button" class="polaroid polaroid--r-1" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.events" data-reveal>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/events2.jpg" alt="" data-i18n-alt="alt.event" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.events">soir de vernissage</span>
+          </button>
+          <button type="button" class="polaroid polaroid--r1" data-curtain data-gallery-trigger="salon" data-caption-i18n="cap.cafe" data-reveal>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/cafe3.jpg" alt="" data-i18n-alt="alt.cafe" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.cafe">le comptoir</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="boutique-teaser band-white">
+    <div class="container">
+      <div class="boutique-teaser-inner" data-reveal>
+        <div class="boutique-teaser-photos">
+          <div class="polaroid polaroid--r-1" data-curtain>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/books2.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async"></span>
+          </div>
+          <div class="polaroid polaroid--r1" data-curtain>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/gallery1.jpg" alt="" data-i18n-alt="alt.gallery" data-fallback loading="lazy" decoding="async"></span>
+          </div>
+        </div>
+        <div class="boutique-teaser-copy">
+          <p class="eyebrow chapter-eyebrow"><span class="chapter-prefix" data-i18n-skip>Chapitre V · </span><span data-i18n="nav.boutique">Boutique</span></p>
+          <h2 data-i18n="b.tease">La boutique est ouverte, même à minuit</h2>
+        </div>
+        <a href="boutique.html" class="btn" data-i18n="nav.boutique">Boutique</a>
+      </div>
+    </div>
+  </section>
+
   <section class="reviews-section band-white">
     <div class="container">
       <div class="reviews-grid stagger">
+        <span class="marginalia marginalia--reviews" data-i18n-skip aria-hidden="true">merci !</span>
         <div class="card review-card" data-reveal="left">
           <p class="quote" data-i18n="rv1.text">Une parenthèse parisienne à Bangkok. On y retourne pour les livres, on y reste pour le chocolat chaud.</p>
           <p class="author" data-i18n="rv1.author">Une habituée</p>
@@ -176,13 +229,13 @@
           <p class="author" data-i18n="rv2.author">Un couple d'expatriés</p>
         </div>
       </div>
-      <p class="review-sample-note" data-i18n="rv.sample">Avis exemple &middot; remplacé par vos vrais avis Google</p>
+      <p class="review-sample-note" data-i18n="rv.sample">Avis exemple · remplacé par vos vrais avis Google</p>
     </div>
   </section>
 
   <section class="closing-band">
     <div class="container text-center">
-      <h2 data-reveal data-i18n="cl.h">Passez nous voir, on vous garde une place</h2>
+      <h2 data-reveal data-i18n="cl.h">La porte est ouverte, le café est chaud</h2>
       <a href="contact.html#visit" class="btn btn-outline-light" data-reveal data-i18n="nav.cta">Nous rendre visite</a>
     </div>
   </section>
@@ -193,11 +246,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="footer-logo logo-missing" aria-label="Balzac Bangkok">
-          <span class="footer-logo-text">
-            <span class="name">BALZAC</span>
-            <span class="sub">LIBRAIRIE &middot; CAFÉ &middot; GALERIE</span>
-          </span>
+        <a href="index.html" class="footer-logo" aria-label="Balzac Bangkok">
+          <img src="assets/img/logo.png" alt="" class="footer-logo-img" data-i18n-alt="alt.logo" data-fallback width="120" height="40" decoding="async">
         </a>
         <p data-i18n="f.tag">Librairie, café et galerie francophones à Bangkok.</p>
       </div>
@@ -213,7 +263,7 @@
         <p data-i18n="f.addr">Soi Charoen Krung 43, Bang Rak, Bangkok 10500</p>
       </div>
     </div>
-    <p class="footer-credit" data-i18n="f.credit">Maquette par Mikaro Studio &middot; mikaro.studio</p>
+    <p class="footer-credit" data-i18n="f.credit">Maquette par Mikaro Studio · mikaro.studio</p>
   </div>
 </footer>
 

@@ -393,7 +393,7 @@
 
   function markImageLoaded(img) {
     img.classList.add("loaded");
-    var frame = img.closest("[data-curtain], .media-frame, .hero-media, .hero-banner, .gallery-item, .event-media, .collage-main, .collage-print, .menu-thumb, .lightbox-photo");
+    var frame = img.closest("[data-curtain], .media-frame, .hero-media, .hero-banner, .gallery-item, .event-media, .collage-main, .collage-print, .menu-thumb, .lightbox-photo, .polaroid-photo, .polaroid");
     if (frame) {
       frame.classList.add("loaded");
     }
@@ -415,6 +415,7 @@
     ensureLightboxShell();
     bindDishRows();
     bindShelfTiles();
+    bindLibIndexRows();
     bindGalleryTriggers();
   }
 
@@ -486,6 +487,14 @@
     });
   }
 
+  function bindLibIndexRows() {
+    document.querySelectorAll(".lib-index-row[data-dish]").forEach(function (row) {
+      row.addEventListener("click", function () {
+        openDishLightbox(row);
+      });
+    });
+  }
+
   function bindGalleryTriggers() {
     document.querySelectorAll("[data-gallery-trigger]").forEach(function (trigger) {
       trigger.addEventListener("click", function () {
@@ -504,7 +513,7 @@
       return;
     }
 
-    var isTile = row.classList.contains("shelf-tile");
+    var isTile = row.classList.contains("shelf-tile") || row.classList.contains("lib-index-row");
     lightboxState.mode = isTile ? "tile" : "dish";
     lightboxState.lastFocus = row;
 
@@ -722,7 +731,7 @@
     document.querySelectorAll("img[data-fallback]").forEach(function (img) {
       var frame =
         img.closest(
-          "[data-curtain], .media-frame, .hero-media, .hero-banner, .gallery-item, .event-media, .collage-main, .collage-print, .menu-thumb, .lightbox-photo"
+          "[data-curtain], .media-frame, .hero-media, .hero-banner, .gallery-item, .event-media, .collage-main, .collage-print, .menu-thumb, .lightbox-photo, .polaroid-photo, .polaroid"
         ) || img.parentElement;
 
       function markBroken() {

@@ -53,6 +53,14 @@
   src: url("../../fonts/ibm-plex-sans-thai-600.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../../fonts/caveat-500-latin.woff2") format("woff2");
+}
+
 /* ==========================================================================
    Tokens
    ========================================================================== */
@@ -3314,4 +3322,576 @@ blockquote,
 .page-hero h1 em {
   font-style: italic;
   color: var(--gold);
+}
+
+/* ==========================================================================
+   Balzac v2: gallery wall, polaroids, hero, boutique
+   ========================================================================== */
+
+:root {
+  --font-accent: "Caveat", cursive;
+}
+
+.chapter-prefix,
+.chapter-eyebrow .chapter-prefix {
+  color: var(--gold);
+}
+
+.chapter-eyebrow {
+  letter-spacing: 0.14em;
+}
+
+.marginalia {
+  position: absolute;
+  font-family: var(--font-accent);
+  font-size: 1.15rem;
+  color: var(--gold);
+  pointer-events: none;
+  z-index: 2;
+  line-height: 1.1;
+}
+
+.marginalia--board {
+  top: -8px;
+  right: 12px;
+  transform: rotate(4deg);
+}
+
+.marginalia--reviews {
+  bottom: 8px;
+  right: 24px;
+  transform: rotate(-3deg);
+}
+
+.marginalia--menu {
+  top: 12px;
+  right: -4px;
+  transform: rotate(2deg);
+}
+
+.marginalia--prices {
+  top: -6px;
+  right: 8px;
+  transform: rotate(-2deg);
+}
+
+.polaroid {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 10px 34px;
+  border: 1px solid var(--hairline);
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(31, 27, 21, 0.12);
+  transform: rotate(var(--polaroid-rot, 0deg));
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+button.polaroid {
+  appearance: none;
+}
+
+.polaroid:hover,
+.polaroid:focus-visible {
+  transform: rotate(0deg) translateY(-6px);
+  box-shadow: 0 16px 36px rgba(31, 27, 21, 0.16);
+  outline: none;
+}
+
+.polaroid--r-2 { --polaroid-rot: -2deg; }
+.polaroid--r-1 { --polaroid-rot: -1deg; }
+.polaroid--r1 { --polaroid-rot: 1deg; }
+.polaroid--r15 { --polaroid-rot: 1.5deg; }
+.polaroid--r2 { --polaroid-rot: 2deg; }
+.polaroid--r-3 { --polaroid-rot: -3deg; }
+
+.polaroid-photo {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--card);
+}
+
+.polaroid-photo .frame-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-caption {
+  display: block;
+  margin-top: 8px;
+  padding: 0 2px;
+  font-family: var(--font-accent);
+  font-size: 1.05rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hero-v2 {
+  padding: calc(var(--header-h) + 48px) 0 56px;
+  background: var(--paper);
+}
+
+.hero-v2-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.hero-v2-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.05;
+  margin: 12px 0 20px;
+  max-width: 14ch;
+}
+
+.hero-v2-text .hero-sub {
+  max-width: 38rem;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.hero-v2-text .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-v2-text .trust-bar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-v2-stack {
+  position: relative;
+  min-height: clamp(320px, 42vw, 520px);
+  padding: 24px 20px 32px;
+}
+
+.hero-v2-offset {
+  position: relative;
+  width: min(100%, 420px);
+  margin-left: auto;
+  min-height: clamp(300px, 38vw, 480px);
+}
+
+.hero-v2-postcard {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 360px);
+  margin-left: auto;
+}
+
+.hero-v2-postcard .polaroid-photo {
+  aspect-ratio: 3 / 4;
+}
+
+.hero-v2-peek {
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  z-index: 1;
+  width: min(58%, 220px);
+}
+
+.par-avion-chip {
+  position: absolute;
+  top: 18px;
+  left: 14px;
+  z-index: 3;
+  padding: 4px 10px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: rgba(251, 246, 234, 0.92);
+}
+
+.ex-libris {
+  position: absolute;
+  right: -10px;
+  bottom: 48px;
+  z-index: 4;
+  width: 72px;
+  height: 72px;
+  color: var(--gold);
+}
+
+.ex-libris-ring {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.ex-libris-b {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  fill: currentColor;
+}
+
+.ex-libris-label {
+  font-family: var(--font-accent);
+  font-size: 7px;
+  fill: currentColor;
+  letter-spacing: 0.08em;
+}
+
+.gallery-wall-section {
+  padding: 72px 0;
+  overflow: hidden;
+}
+
+.gallery-wall-frame {
+  margin-top: 28px;
+  padding: clamp(20px, 4vw, 36px);
+  background: var(--card);
+  border: 3px double var(--hairline);
+}
+
+.gallery-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+  align-items: center;
+  max-width: 100%;
+}
+
+.gallery-wall-grid .polaroid:nth-child(1) {
+  grid-column: 1 / span 4;
+  justify-self: start;
+  width: min(100%, 220px);
+}
+
+.gallery-wall-grid .polaroid:nth-child(2) {
+  grid-column: 4 / span 3;
+  justify-self: center;
+  width: min(100%, 180px);
+  margin-top: 24px;
+}
+
+.gallery-wall-grid .polaroid:nth-child(3) {
+  grid-column: 7 / span 4;
+  justify-self: end;
+  width: min(100%, 240px);
+}
+
+.gallery-wall-grid .polaroid:nth-child(4) {
+  grid-column: 2 / span 3;
+  justify-self: start;
+  width: min(100%, 190px);
+  margin-top: -8px;
+}
+
+.gallery-wall-grid .polaroid:nth-child(5) {
+  grid-column: 9 / span 3;
+  justify-self: end;
+  width: min(100%, 170px);
+  margin-top: 12px;
+}
+
+.boutique-teaser {
+  padding: 64px 0;
+}
+
+.boutique-teaser-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(20px, 4vw, 40px);
+  align-items: center;
+}
+
+.boutique-teaser-photos {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.boutique-teaser-photos .polaroid {
+  width: 140px;
+}
+
+.boutique-teaser-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 8px;
+}
+
+.week-section {
+  position: relative;
+}
+
+.week-board {
+  position: relative;
+}
+
+.week-visual {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.week-visual .polaroid {
+  width: min(100%, 240px);
+}
+
+.lib-spread-section {
+  padding: 48px 0 64px;
+}
+
+.lib-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.lib-spread-photos {
+  display: grid;
+  gap: 24px;
+}
+
+.lib-spread-photos .polaroid:nth-child(1) {
+  width: min(100%, 320px);
+}
+
+.lib-spread-photos .polaroid:nth-child(2) {
+  width: min(100%, 280px);
+  margin-left: auto;
+}
+
+.lib-index {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 12px;
+}
+
+.lib-index-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px dotted var(--hairline);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  color: var(--ink);
+}
+
+.lib-index-row:hover,
+.lib-index-row:focus-visible {
+  color: var(--emerald);
+  outline: none;
+}
+
+.lib-index-leader {
+  border-bottom: 1px dotted var(--gold);
+  min-width: 24px;
+  transform: translateY(-4px);
+}
+
+.cafe-spread {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 28px);
+  margin-bottom: 40px;
+}
+
+.cafe-spread .polaroid {
+  width: 100%;
+}
+
+.cafe-layout-wrap {
+  position: relative;
+}
+
+.cafe-menu-card {
+  position: relative;
+  max-width: 520px;
+}
+
+.gallery-trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 28px);
+  margin-bottom: 40px;
+}
+
+.events-duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 28px);
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.boutique-section {
+  padding: 48px 0 72px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  margin-top: 40px;
+}
+
+.shop-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.shop-product .polaroid {
+  cursor: default;
+}
+
+.shop-product .polaroid:hover,
+.shop-product .polaroid:focus-visible {
+  transform: rotate(var(--polaroid-rot, 0deg));
+  box-shadow: 0 10px 28px rgba(31, 27, 21, 0.12);
+}
+
+.shop-product h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.shop-test-note {
+  margin-top: 36px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 52rem;
+}
+
+.brand-chip-logo,
+.footer-logo-img {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+.footer-logo-img {
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1024px) {
+  .hero-v2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-v2-offset {
+    margin: 0 auto;
+  }
+
+  .hero-v2-text h1 {
+    max-width: none;
+  }
+
+  .boutique-teaser-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .boutique-teaser-photos {
+    justify-content: center;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .lib-spread {
+    grid-template-columns: 1fr;
+  }
+
+  .lib-spread-photos .polaroid:nth-child(2) {
+    margin-left: 0;
+  }
+
+  .cafe-spread,
+  .gallery-trio {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-wall-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .gallery-wall-grid .polaroid:nth-child(1) { grid-column: 1 / span 3; }
+  .gallery-wall-grid .polaroid:nth-child(2) { grid-column: 4 / span 3; margin-top: 0; }
+  .gallery-wall-grid .polaroid:nth-child(3) { grid-column: 1 / span 4; }
+  .gallery-wall-grid .polaroid:nth-child(4) { grid-column: 3 / span 4; }
+  .gallery-wall-grid .polaroid:nth-child(5) { grid-column: 2 / span 4; }
+}
+
+@media (max-width: 640px) {
+  .shop-grid,
+  .cafe-spread,
+  .gallery-trio,
+  .events-duo {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-wall-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .gallery-wall-grid .polaroid:nth-child(n) {
+    grid-column: auto;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .boutique-teaser-photos .polaroid {
+    width: 120px;
+  }
+
+  .hero-v2-stack {
+    min-height: 280px;
+    padding-inline: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid {
+    transition: none;
+  }
+
+  .polaroid:hover,
+  .polaroid:focus-visible {
+    transform: rotate(var(--polaroid-rot, 0deg));
+  }
 }

@@ -22,11 +22,8 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html" class="brand-chip logo-missing" aria-label="Balzac Bangkok">
-      <span class="brand-chip-text">
-        <span class="name">BALZAC</span>
-        <span class="sub">LIBRAIRIE &middot; CAF&Eacute; &middot; GALERIE</span>
-      </span>
+    <a href="index.html" class="brand-chip" aria-label="Balzac Bangkok">
+      <img src="assets/img/logo.png" alt="" class="brand-chip-logo" data-i18n-alt="alt.logo" data-fallback width="140" height="44" decoding="async">
     </a>
     <div class="nav-drawer">
       <button type="button" class="drawer-close" aria-label="Close menu" data-i18n-aria-label="drawer.close">
@@ -38,6 +35,7 @@
           <li><a href="librairie.html" data-i18n="nav.librairie">Librairie</a></li>
           <li><a href="cafe.html" data-i18n="nav.cafe">Caf&eacute;</a></li>
           <li><a href="galerie.html" data-i18n="nav.galerie">Galerie</a></li>
+          <li><a href="boutique.html" data-i18n="nav.boutique">Boutique</a></li>
           <li><a href="events.html" data-i18n="nav.events">&Eacute;v&eacute;nements</a></li>
           <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -67,15 +65,27 @@
     </div>
   </section>
 
-  <section class="shelf-section">
+  <section class="lib-spread-section">
     <div class="container">
-      <div class="shelf-grid stagger">
-        <button type="button" class="shelf-tile shelf-tile--emerald" data-reveal data-dish="cat1" data-dish-name="l.cat1" data-dish-desc="l.tile.note"><span class="shelf-tile-title" data-i18n="l.cat1">Romans classiques</span></button>
-        <button type="button" class="shelf-tile shelf-tile--ink" data-reveal data-dish="cat2" data-dish-name="l.cat2" data-dish-desc="l.tile.note"><span class="shelf-tile-title" data-i18n="l.cat2">Polars</span></button>
-        <button type="button" class="shelf-tile shelf-tile--gold" data-reveal data-dish="cat3" data-dish-name="l.cat3" data-dish-desc="l.tile.note"><span class="shelf-tile-title" data-i18n="l.cat3">Beaux livres</span></button>
-        <button type="button" class="shelf-tile shelf-tile--deep" data-reveal data-dish="cat4" data-dish-name="l.cat4" data-dish-desc="l.tile.note"><span class="shelf-tile-title" data-i18n="l.cat4">Bandes dessin&eacute;es</span></button>
-        <button type="button" class="shelf-tile shelf-tile--warm" data-reveal data-dish="cat5" data-dish-name="l.cat5" data-dish-desc="l.tile.note"><span class="shelf-tile-title" data-i18n="l.cat5">Jeunesse</span></button>
-        <button type="button" class="shelf-tile shelf-tile--soft" data-reveal data-dish="cat6" data-dish-name="l.cat6" data-dish-desc="l.tile.note"><span class="shelf-tile-title" data-i18n="l.cat6">Essais</span></button>
+      <div class="lib-spread">
+        <div class="lib-spread-photos stagger">
+          <div class="polaroid polaroid--r-2" data-reveal data-curtain>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/books3.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.books">le mur des romans</span>
+          </div>
+          <div class="polaroid polaroid--r1" data-reveal data-curtain>
+            <span class="polaroid-photo"><img class="frame-img" src="assets/img/books4.jpg" alt="" data-i18n-alt="alt.books" data-fallback loading="lazy" decoding="async"></span>
+            <span class="polaroid-caption" data-i18n="cap.books">le mur des romans</span>
+          </div>
+        </div>
+        <div class="lib-index" data-reveal="scale">
+          <button type="button" class="lib-index-row" data-dish="cat1" data-dish-name="l.cat1" data-dish-desc="l.tile.note"><span class="lib-index-name" data-i18n="l.cat1">Romans classiques</span><span class="lib-index-leader" aria-hidden="true"></span></button>
+          <button type="button" class="lib-index-row" data-dish="cat2" data-dish-name="l.cat2" data-dish-desc="l.tile.note"><span class="lib-index-name" data-i18n="l.cat2">Polars</span><span class="lib-index-leader" aria-hidden="true"></span></button>
+          <button type="button" class="lib-index-row" data-dish="cat3" data-dish-name="l.cat3" data-dish-desc="l.tile.note"><span class="lib-index-name" data-i18n="l.cat3">Beaux livres</span><span class="lib-index-leader" aria-hidden="true"></span></button>
+          <button type="button" class="lib-index-row" data-dish="cat4" data-dish-name="l.cat4" data-dish-desc="l.tile.note"><span class="lib-index-name" data-i18n="l.cat4">Bandes dessinées</span><span class="lib-index-leader" aria-hidden="true"></span></button>
+          <button type="button" class="lib-index-row" data-dish="cat5" data-dish-name="l.cat5" data-dish-desc="l.tile.note"><span class="lib-index-name" data-i18n="l.cat5">Jeunesse</span><span class="lib-index-leader" aria-hidden="true"></span></button>
+          <button type="button" class="lib-index-row" data-dish="cat6" data-dish-name="l.cat6" data-dish-desc="l.tile.note"><span class="lib-index-name" data-i18n="l.cat6">Essais</span><span class="lib-index-leader" aria-hidden="true"></span></button>
+        </div>
       </div>
     </div>
   </section>
@@ -117,8 +127,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="footer-logo logo-missing" aria-label="Balzac Bangkok">
-          <span class="footer-logo-text"><span class="name">BALZAC</span><span class="sub">LIBRAIRIE &middot; CAF&Eacute; &middot; GALERIE</span></span>
+        <a href="index.html" class="footer-logo" aria-label="Balzac Bangkok">
+          <img src="assets/img/logo.png" alt="" class="footer-logo-img" data-i18n-alt="alt.logo" data-fallback width="120" height="40" decoding="async">
         </a>
         <p data-i18n="f.tag">Librairie, caf&eacute; et galerie francophones &agrave; Bangkok.</p>
       </div>
