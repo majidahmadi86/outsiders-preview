@@ -738,10 +738,7 @@ sections.push(block("Site header", `
   display: none; flex-direction: column; justify-content: center; gap: 5px;
   width: 44px; height: 44px; padding: 10px;
 }
-.hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); transition: transform 0.3s var(--ease), opacity 0.3s ease; }
-.hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.is-open span:nth-child(2) { opacity: 0; }
-.hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); }
 .nav-scrim { display: none; }
 `));
 
@@ -769,6 +766,10 @@ sections.push(block("Lang toggle", `
 sections.push(block("Mobile drawer", `
 @media (max-width: 900px) {
   .hamburger { display: flex; z-index: 920; }
+  .nav-drawer.is-open ~ .hamburger {
+    visibility: hidden;
+    pointer-events: none;
+  }
   .nav-drawer {
     position: fixed; top: 0; right: 0;
     width: min(340px, 88vw); height: 100dvh;

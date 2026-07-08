@@ -172,7 +172,6 @@
     }
 
     function closeNav() {
-      toggle.classList.remove("is-open");
       drawer.classList.remove("is-open");
       if (scrim) {
         scrim.classList.remove("is-open");
@@ -183,7 +182,6 @@
     }
 
     function openNav() {
-      toggle.classList.add("is-open");
       drawer.classList.add("is-open");
       if (scrim) {
         scrim.classList.add("is-open");
